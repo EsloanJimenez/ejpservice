@@ -1,0 +1,16 @@
+.customer_list {
+   height: 600px;
+   overflow: auto;
+}
+.customer_list table tr:last-child td{
+   padding: 20px 0 10px 20px;
+}
+#id{
+   cursor:no-drop;
+}
+.customer_list table .to_pay a {
+   cursor: pointer;
+}
+.customer_list table tbody tr td img {
+   border-radius: 50%;
+}

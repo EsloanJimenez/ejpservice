@@ -1,0 +1,103 @@
+.neutral {
+   margin: 5px 10px;
+   padding: 10px 20px;
+   border-radius: 20px;
+   border: 0;
+   background-color: #7f827f;
+   color: #fff;
+   font-size: 18px;
+   transition: all ease-out .5s
+}
+.neutral:hover {
+   color: #7f827f;
+   border: 1px solid #fff;
+   cursor: pointer;
+   background-color: rgba(152, 132, 124, 0);
+}
+.btn_view {
+   margin: 5px 10px;
+   padding: 10px;
+   border-radius: 20px;
+   border: 0;
+   background-color: #81b0be;
+   color: #fff;
+   font-size: 16px;
+   transition: all ease-out .5s
+}
+.btn_view:hover {
+   color: #81b0be;
+   border: 1px solid #fff;
+   cursor: pointer;
+   background-color: rgba(152, 132, 124, 0);
+}
+.btn_register {
+   margin: 5px 10px;
+   padding: 10px 20px;
+   border: 1px solid #13b000;
+   border-radius: 20px;
+   background-color: #13b000;
+   color: #fff;
+   font-size: 18px;
+   transition: all ease-out .5s
+}
+
+.btn_register:hover {
+   border: 1px solid #fff;
+   color: #13b000;
+   background-color: rgba(163, 110, 127, 0.02);
+   cursor: pointer;
+}
+.btn_update {
+   width: 110px;
+   margin: 5px 10px;
+   padding: 10px 20px;
+   border: 1px solid #b05d00;
+   border-radius: 20px;
+   background-color: #b05d00;
+   color: #fff;
+   font-size: 16px;
+   transition: all ease-out .5s
+}
+
+.btn_update:hover {
+   border: 1px solid #fff;
+   color: #b05d00;
+   cursor: pointer;
+   background-color: rgba(163, 110, 127, 0.02);
+}
+.btn_delete {
+   width: 100px;
+   margin: 5px 10px;
+   padding: 10px 20px;
+   border: 1px solid #b00000;
+   border-radius: 20px;
+   background-color: #b00000;
+   color: #fff;
+   font-size: 16px;
+   transition: all ease-out .5s
+}
+
+.btn_delete:hover {
+   border: 1px solid #fff;
+   color: #b00000;
+   cursor: pointer;
+   background-color: rgba(163, 110, 127, 0.02);
+}
+.btn_print {
+   width: 100px;
+   margin: 5px 10px;
+   padding: 10px 20px;
+   border-radius: 20px;
+   border: 0;
+   background-color: #9000b0;
+   color: #fff;
+   font-size: 16px;
+   transition: all ease-out .5s
+}
+
+.btn_print:hover {
+   border: 1px solid #fff;
+   color: #9000b0;
+   cursor: pointer;
+   background-color: rgba(163, 110, 127, 0.02);
+}

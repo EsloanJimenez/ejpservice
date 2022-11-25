@@ -1,0 +1,53 @@
+.customer_list {
+    height: 83vh;
+    overflow: auto;
+ }
+ .customer_list table #cabezera {
+    position: relative;
+    top: 5px;
+ }
+ .customer_list table tr td img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+ }
+ .customer_list table tr td[colspan] a{
+    width: 10px;
+    height: 10px;
+    margin: 2.5px;
+    padding: 5px 10px;
+    border-radius: 50%;
+    background-color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all ease-in .5s;
+ }
+ .customer_list table tr td[colspan] a:hover {
+    color: #fff;
+    background-color: rgba(225, 225, 225, 0);
+    border: 1px solid #000;
+ }
+
+ @media screen and (max-width: 768px) {
+    .customer_list table #cabezera {
+        display: none;
+    }
+    .customer_list table tr {
+        margin: 10px 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        font-size: 20px;
+        font-weight: bold;
+    }
+    .customer_list table tr td {
+      font-size: 12px;
+   }
+    .customer_list table tr td img {
+        width: 150px;
+        height: 150px;
+        border-radius: 50%;
+     }
+ }

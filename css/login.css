@@ -1,0 +1,77 @@
+body {
+   margin: 0;
+   padding: 0;
+   background-image: url(../img/banner/login_pc.jpg);
+   background-size: cover;
+   background-repeat: no-repeat;
+   font-family: Edwardian Script ITC;
+   color: white;
+}
+.container_login {
+   width: 100%;
+   height: 100vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+}
+.login {
+   width: 300px;
+   height: 450px;
+   padding: 20px 50px;
+   border-radius: 20px;
+   background-color: rgba(0, 0, 0, 0.5);
+}
+.login .head img {
+   width: 200px;
+}
+.login form {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+.login input {
+   width: 85%;
+   margin: 10px 0;
+   padding: 10px 20px;
+   background-color: rgba(0, 0, 0, 0.7);
+   border: 0;
+   border-radius: 20px;
+   color: #fff;
+}
+.login input[type="submit"] {
+   transition: all ease-out .5s;
+}
+.login input[type="submit"]:hover {
+   color: rgba(0, 0, 0, 0.7);
+   background-color: rgba(255, 255, 255, 1);
+   cursor: pointer;
+}
+.login p {
+   font-size: 28px;
+}
+.login p a {
+   color: #fff;
+   text-decoration: none;
+}
+@media screen and (max-width: 768px) {
+   body {
+      background-image: url(../img/banner/login_cel.jpg);
+   }
+   .login {
+      width: 80%;
+      height: 650px;
+   }
+   .login .head img {
+      width: 300px;
+   }
+   .login .head h1 {
+      font-size: 50px;
+   }
+   .login input {
+      font-size: 40px;
+   }
+   .login p {
+      font-size: 48px;
+   }
+}

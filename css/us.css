@@ -1,0 +1,110 @@
+.banner .imagen_texto .mostrar_h1 {
+   position: relative;
+   right: 10%;
+}
+.main .nosotros {
+   display: flex;
+   justify-content: space-between;
+   position: relative;
+   bottom: 240px;
+}
+.main .nosotros .img_esloan {
+   width: 1550px;
+   height: 900px;
+   overflow: hidden;
+}
+.main .nosotros .img_esloan img {
+   height: 900px;
+   background-attachment: fixed;
+}
+.main .nosotros .detalles_miembro {
+   width: 1550px;
+   height: 900px;
+   padding: 100px 200px;
+   color: #745c47;
+   text-align: center;
+   align-items: center;
+}
+.main .nosotros .detalles_miembro h1 {
+   font-size: 70px;
+   margin-bottom: 100px;
+   overflow: hidden;
+}
+.main .nosotros .detalles_miembro p {
+   width: 550px;
+   margin: auto;
+   font-size: 20px;
+}
+.borde {
+   width: 100px;
+   height: 5px;
+   margin-bottom: 50px;
+   background-color: #745c47;
+}
+#exito {
+   width: 300px;
+   height: 200px;
+   background: rgba(0, 0, 0, 0.6);
+   color: white;
+   align-items: center;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+}
+@media screen and (max-width: 1920px) {
+   .banner .imagen_texto .mostrar_h1 {
+      position: relative;
+      left: 5%;
+   }
+   .banner .imagen_texto .mostrar_h1 h1 {
+      font-size: 60px;
+   }
+   .main .contact img {
+      width: 1000px;
+      height: 700px;
+   }
+}
+@media screen and (max-width: 1366px) {
+   .main .contact {
+      width: 100%;
+   }
+   .main .img_esloan img {
+      width: 800px;
+   }
+}
+@media screen and (max-width: 768px) {
+   .main .nosotros {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      position: relative;
+      bottom: 0px;
+   }
+   .main .nosotros .img_esloan {
+      width: 100%;
+      height: 750px;
+   }
+   .main .nosotros .img_esloan img {
+      height: 700px;
+      background-attachment: fixed;
+   }
+   .main .nosotros .detalles_miembro {
+      width: 100%;
+      height: 500px;
+      padding: 0px;
+      color: #745c47;
+      text-align: center;
+      align-items: center;
+   }
+   .main .nosotros .detalles_miembro h1 {
+      font-size: 50px;
+      margin-bottom: 50px;
+      overflow: hidden;
+   }
+   .main .nosotros .detalles_miembro p {
+      width: 90%;
+      margin: auto;
+      font-size: 16px;
+   }
+}
+@media screen and (max-width: 480px) {}

@@ -1,0 +1,649 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   font-family: 'Montserrat', sans-serif;
+   overflow-x: hidden;
+}
+body::-webkit-scrollbar {
+   width: 7px;
+}
+body::-webkit-scrollbar-thumb {
+   background: #81b0be;
+   border-radius: 5px;
+}
+/*--------------------------EXPERIENCIA---------------------------*/
+.experiencia {
+   width: 100%;
+   height: 1540px;
+   padding: 200px 100px;
+   position: relative;
+   bottom: 240px;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   justify-content: space-between;
+}
+
+.experiencia .p {
+   width: 650px;
+   font-size: 20px;
+   line-height: 1.5em;
+   color: #465a60;
+}
+
+.experiencia .elojios_principal {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+
+.experiencia .elojios_principal .elojios {
+   width: 500px;
+   height: 300px;
+   border-bottom: 5px solid #355a65;
+}
+.hide {
+   overflow: hidden;
+}
+
+.experiencia .elojios_principal .elojios h1 {
+   font-size: 150px;
+   color: #4c8292;
+}
+
+.experiencia .elojios_principal .elojios p {
+   font-size: 20px;
+   font-weight: bold;
+   color: #465a60;
+}
+
+.detalle_p {
+   width: 750px;
+   font-size: 50px;
+   color: #81b0be;
+}
+
+.experiencia .detalles a {
+   background-color: #4c8292;
+   color: #fff;
+   padding: 15px 25px;
+   position: relative;
+   top: 40px;
+   text-decoration: none;
+   transition: all ease .5s;
+}
+
+.experiencia .detalles a:hover {
+   border: 1px solid #4c8292;
+   color: #4c8292;
+   background-color: rgba(44, 154, 180, 0);
+}
+
+/*--------------------------SERVICIOS---------------------------*/
+.servicios {
+   width: 100%;
+   height: 800px;
+   padding: 200px 100px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+   align-items: center;
+   position: relative;
+   bottom: 240px;
+}
+.servicios a {
+   text-decoration: none;
+}
+.servicios .bloque {
+   height: 400px;
+   overflow: hidden;
+}
+
+.servicios .bloque img {
+   width: 550px;
+   height: 400px;
+   transition: all ease-out 1s;
+}
+.servicios .bloque:hover > img{
+   transform: scale(1.2);
+}
+.servicios .bloque .title {
+   width: 100%;
+   height: 100%;
+   padding: 25px 0 0 25px;
+   font-size: 20px;
+   font-weight: bold;
+   position: relative;
+   bottom: 400px;
+   color: #465a60;
+   background: rgb(0, 0, 0, 0);
+   text-shadow: 1px 1px rgba(0, 0, 0, 0.52);
+   transition: all ease-out 1s;
+}
+.servicios .bloque:hover > .title {
+   color: white;
+   background: rgb(0, 0, 0, 0.3);
+   text-shadow: 1px 1px rgba(0, 0, 0, 0.52);
+}
+
+/*--------------------------CERTIFICACIONES---------------------------*/
+.certificaciones {
+   width: 100%;
+   height: 580px;
+   padding: 50px;
+   position: relative;
+   bottom: 140px;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   justify-content: space-between;
+   background-color: #81b0be;
+}
+.grupo {
+   padding: 0 50px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-between;
+}
+.certificaciones .grupo .columna .hide {
+   height: 150px;
+}
+.grupo .columna h2 {
+   color: #465a60;
+}
+.grupo .columna p {
+   width: 300px;
+   font-size: 20px;
+   line-height: 1.5em;
+   color: #465a60;
+}
+
+/*--------------------------PRESTIGIO---------------------------*/
+.prestigio {
+   width: 100%;
+   height: 750px;
+   padding: 100px;
+   position: relative;
+   bottom: 140px;
+   display: flex;
+   flex-wrap: wrap;
+   flex-direction: column;
+   justify-content: space-between;
+}
+.prestigio .grupo {
+   justify-content: space-between;
+}
+.prestigio .grupo .columna .borde {
+   width: 100px;
+   height: 5px;
+   margin-bottom: 35px;
+   background-color: #355a65;
+}
+.prestigio .grupo .columna .testimonio {
+   width: 500px;
+   height: 300px;
+   overflow: scroll;
+}
+.prestigio .grupo .columna .testimonio::-webkit-scrollbar {
+   width: 7px;
+}
+.prestigio .grupo .columna .testimonio::-webkit-scrollbar-thumb {
+   background: #81b0be;
+   border-radius: 5px;
+}
+.prestigio .grupo .columna .testimonio p {
+   width: 450px;
+}
+.prestigio .grupo .columna h2 {
+   margin-top: 25px;
+   font-weight: 400;
+}
+.prestigio .borde {
+   width: 100%;
+   height: 5px;
+   background-color: #355a65;
+}
+
+@media screen and (max-width: 1920px)  {
+   /*-------------------EXPERIENCIA----------------*/
+   .experiencia {
+      height: 1080px;
+      padding: 100px;
+   }
+
+   .experiencia .p {
+      font-size: 18px;
+   }
+   .experiencia .elojios_principal .elojios {
+      width: 300px;
+      height: 200px;
+   }
+   .experiencia .elojios_principal .elojios h1 {
+      font-size: 120px;
+   }
+
+   .experiencia .elojios_principal .elojios p {
+      font-size: 18px;
+      font-weight: bold;
+      color: #465a60;
+   }
+
+   .detalle_p {
+      width: 550px;
+      font-size: 40px;
+   }
+
+   .experiencia .detalles a {
+      padding: 15px 25px;
+      position: relative;
+      top: 40px;
+      transition: all ease .5s;
+   }
+   /*--------------------------SERVICIOS---------------------------*/
+   .servicios {
+      height: 600px;
+      padding: 100px;
+   }
+   .servicios .bloque {
+      width: 400px;
+      height: 300px;
+   }
+
+   .servicios .bloque a img {
+      height: 200px;
+      transition: all ease 1s;
+   }
+   .servicios .bloque a img:hover{
+      width: 200px;
+      border-radius: 50%;
+   }
+   .servicios .bloque .title {
+      margin: 25px 15px;
+      font-size: 20px;
+      font-weight: bold;
+      color: #465a60;
+   }
+   /*--------------------------PRESTIGIO---------------------------*/
+   .prestigio {
+      width: 100%;
+      height: 800px;
+      padding: 100px 50px;
+   }
+   .prestigio .borde {
+      width: 100%;
+   }
+}
+
+@media screen and (max-width: 1366px) {
+   /*-------------------EXPERIENCIA----------------*/
+   .experiencia {
+      height: 610px;
+      padding: 75px 50px;
+   }
+
+   .experiencia .p {
+      width: 425px;
+      font-size: 14px;
+   }
+   .experiencia .elojios_principal .elojios {
+      width: 200px;
+      height: 150px;
+   }
+   .experiencia .elojios_principal .elojios h1 {
+      font-size: 80px;
+   }
+
+   .experiencia .elojios_principal .elojios p {
+      font-size: 14px;
+   }
+
+   .detalle_p {
+      font-size: 25px;
+   }
+   /*--------------------------SERVICIOS---------------------------*/
+   .servicios {
+      height: 500px;
+      padding: 100px;
+   }
+   .servicios .bloque {
+      width: 200px;
+      height: 250px;
+   }
+
+   .servicios .bloque a img {
+      height: 200px;
+      transition: all ease 1s;
+   }
+   .servicios .bloque a img:hover{
+      width: 200px;
+      border-radius: 50%;
+   }
+   .servicios .bloque .title {
+      margin: 20px 10px;
+      font-size: 18px;
+   }
+   /*--------------------------CERTIFICACIONES---------------------------*/
+   .certificaciones {
+      height: 700px;
+      padding: 50px 100px;
+      display: flex;
+      flex-grow: wrap;
+      flex-direction: column;
+      justify-content: space-between;
+   }
+   .grupo {
+      padding: 0 50px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+   .certificaciones .grupo .columna {
+      margin: 0 50px;
+   }
+   .certificaciones .grupo .columna .hide {
+      height: 150px;
+   }
+   .grupo .columna h2 {
+      font-size: 16px;
+      color: #465a60;
+   }
+   .grupo .columna p {
+      width: 200px;
+      font-size: 14px;
+   }
+   /*--------------------------PRESTIGIO---------------------------*/
+   .prestigio {
+      width: 100%;
+      height: 1650px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+   }
+   .prestigio .detalles {
+      width: 100%;
+      margin-bottom: 100px;
+   }
+   .prestigio .grupo {
+      display: flex;
+      justify-content: flex-start;
+   }
+   .prestigio .grupo .columna {
+      margin-right: 120px;
+   }
+   .prestigio .grupo .columna .borde {
+      width: 60px;
+      height: 3px;
+   }
+   .prestigio .borde {
+      width: 100%;
+   }
+}
+
+@media screen and (max-width: 768px) {
+   /*-------------------EXPERIENCIA----------------*/
+   .experiencia {
+      top: 0px;
+      height: 1250px;
+      padding: 60px 50px;
+      position: relative;
+   }
+
+   .experiencia .p {
+      width: 100%;
+      font-size: 16px;
+      line-height: 1.2em;
+   }
+   .experiencia .elojios_principal {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+   }
+   .experiencia .elojios_principal .elojios {
+      width: 105%;
+      height: 130px;
+      margin-bottom: 100px;
+      border-bottom: 3px solid #355a65;
+   }
+   .experiencia .elojios_principal .elojios h1 {
+      font-size: 100px;
+   }
+
+   .experiencia .elojios_principal .elojios p {
+      font-size: 20px;
+      font-weight: bold;
+      color: #465a60;
+      margin-top: 20px;
+   }
+
+   .detalle_p {
+      width: 350px;
+      font-size: 30px;
+   }
+
+   .experiencia .detalles a {
+      font-size: 12px;
+      padding: 10px 20px;
+      position: relative;
+      top: 20px;
+      transition: all ease .5s;
+   }
+   /*--------------------------SERVICIOS---------------------------*/
+   .servicios {
+      width: 100%;
+      height: 1600px;
+      padding: 0px;
+      top: 0px;
+   }
+   .servicios .bloque {
+      width: 100%;
+      height: 360px;
+      margin: 0;
+      border-bottom: 0px solid #355a65;
+   }
+   .servicios .bloque .title {
+      margin: 15px 5px;
+      font-size: 18px;
+      position: relative;
+      bottom: 220px;
+      left: 30px;
+      color: white;
+   }
+   /*--------------------------CERTIFICACIONES---------------------------*/
+   .certificaciones {
+      height: 1500px;
+      padding: 0px;
+      top: 0px;
+   }
+   .grupo {
+      padding: 0px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+   .certificaciones .grupo .columna {
+      width: 100%;
+      height: 325px;
+      padding-bottom: 0px;
+      margin-bottom: 5px;
+   }
+   .certificaciones .grupo .columna .hide {
+      height: 150px;
+   }
+   .certificaciones .grupo .columna h2 {
+      font-size: 20px;
+      line-height: 3.5em;
+   }
+   .certificaciones .grupo .columna p {
+      width: 100%;
+      font-size: 16px;
+   }
+   /*--------------------------PRESTIGIO---------------------------*/
+   .prestigio {
+      width: 100%;
+      height: 1700px;
+      padding: 5px;
+      top: 0px;
+   }
+   .prestigio .grupo {
+      padding: 0;
+   }
+   .prestigio .grupo .columna {
+      margin-right: 10px;
+   }
+   .prestigio .grupo .columna .borde {
+      margin-top: 40px;
+   }
+   .prestigio .grupo .columna .testimonio {
+      width: 105%;
+      padding: 15px;
+   }
+   .prestigio .grupo .columna p {
+      font-size: 16px;
+   }
+   .prestigio .grupo .columna h2 {
+      font-size: 20px;
+      line-height: 3.5em;
+   }
+
+}
+
+@media screen and (max-width: 480px) {
+   /*--------------------------EXPERIENCIA---------------------------*/
+   .experiencia {
+      height: 1250px;
+      padding:50px 20px;
+      position: relative;
+      top: -240px;
+   }
+   .experiencia .p {
+      width: 100%;
+      font-size: 20px;
+      line-height: 1.2em;
+   }
+   .experiencia .elojios_principal .elojios {
+      width: 100%;
+      height: 90px;
+      margin-bottom: 100px;
+      border-bottom: 0px solid #355a65;
+   }
+   .experiencia .elojios_principal .elojios h1 {
+      font-size: 90px;
+   }
+   .experiencia .elojios_principal .elojios p {
+      font-size: 20px;
+   }
+   .detalle_p {
+      width: 100%;
+      font-size: 36px;
+   }
+   .experiencia .detalles a {
+      font-size: 20px;
+      padding: 10px 20px;
+      top: 30px;
+      transition: all ease .5s;
+   }
+
+   .experiencia .detalles a:checked {
+      border: 1px solid #81b0be;
+      color: #81b0be;
+      background-color: rgba(44, 154, 180, 0);
+   }
+
+   /*--------------------------SERVICIOS---------------------------*/
+   .servicios {
+      height: 1000px;
+      padding: 50px 5px;
+      top: -240px;
+   }
+   .servicios .bloque {
+      width: 100%;
+      margin: 0;
+      border-bottom: 0px solid #355a65;
+   }
+   .servicios .bloque a img {
+      width: 100%;
+      height: 250px;
+      margin: 0;
+      transition: all ease 1s;
+   }
+   .servicios .bloque a img:checked {
+      width: 100px;
+      border-radius: 50%;
+   }
+   .servicios .bloque .title {
+      margin: 15px 5px;
+      font-size: 18px;
+      position: relative;
+      bottom: 220px;
+      left: 30px;
+      color: white;
+   }
+
+   /*--------------------------CERTIFICACIONES---------------------------*/
+   .certificaciones {
+      height: 1500px;
+      padding: 20px;
+      position: relative;
+      top: 0px;
+   }
+   .grupo {
+      padding: 0px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+   }
+   .certificaciones .grupo .columna {
+      width: 100%;
+      height: 325px;
+      margin-bottom: 5px;
+   }
+   .certificaciones .grupo .columna .hide {
+      height: 150px;
+   }
+   .certificaciones .grupo .columna h2 {
+      font-size: 20px;
+      line-height: 3.5em;
+   }
+   .certificaciones .grupo .columna p {
+      width: 100%;
+      font-size: 16px;
+      color: #465a60;
+   }
+
+   /*--------------------------PRESTIGIO---------------------------*/
+   .prestigio {
+      height: 1700px;
+      padding: 5px;
+      margin-top: 50px;
+      top: 0px;
+   }
+   .prestigio .grupo .columna {
+      margin-right: 50px;
+   }
+   .prestigio .grupo .columna .borde {
+      margin-top: 40px;
+   }
+   .prestigio .grupo .columna .testimonio {
+      width: 80%;
+      padding: 15px;
+   }
+   .prestigio .grupo .columna p {
+      font-size: 14px;
+      padding: 5px;
+   }
+   .prestigio .grupo .columna h2 {
+      margin-top: 5px;
+      font-size: 18px;
+      font-weight: bold;
+   }
+   .prestigio .borde {
+      width: 100%;
+      height: 2px;
+      background-color: #355a65;
+   }
+}

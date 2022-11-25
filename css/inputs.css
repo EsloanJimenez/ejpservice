@@ -1,0 +1,67 @@
+form {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+}
+input {
+   width: 85%;
+   margin: 10px 0;
+   padding: 10px 20px;
+   background-color: rgba(0, 0, 0, 0.7);
+   border: 0;
+   border-radius: 20px;
+   color: #fff;
+}
+input[type="submit"] {
+   transition: all ease-out .5s;
+}
+input[type="submit"]:hover {
+   color: rgba(0, 0, 0, 0.7);
+   border: 1px solid rgba(0, 0, 0, 0.7);
+   background-color: rgba(255, 255, 255, 1);
+   cursor: pointer;
+}
+select {
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   -ms-appearance: none;
+   appearance: none;
+   outline: 0;
+   padding: 10px 20px;
+   box-shadow: none;
+   border: 0!important;
+   background-color: rgba(0, 0, 0, 0.7);
+   background-image: none;
+   flex: 1;
+   color: #fff;
+   cursor: pointer;
+}
+select::-ms-expand {
+   display: none;
+}
+.select {
+   width: 85%;
+   height: 3em;
+   margin: 10px 0;
+   position: relative;
+   display: flex;
+   line-height: 3;
+   background-color: #5c6664;
+   overflow: hidden;
+   border-radius: 20px;
+}
+.select::after {
+   content: '\25BC';
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 0 1em;
+   background-color: #2b2e2e;
+   cursor: pointer;
+   pointer-events: none;
+   transition: all ease-in-out .25s;
+}
+.select:hover::after {
+   color: #81b0be;
+}

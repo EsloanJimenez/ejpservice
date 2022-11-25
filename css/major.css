@@ -1,0 +1,155 @@
+.to_pay {
+   color: rgb(170, 0, 0);
+   font-weight: 600;
+
+}
+.paid_out {
+   color: rgb(34, 170, 0);
+   font-weight: 600;
+}
+#container {
+   display: flex;
+}
+.totals {
+   font-size: 18px;
+   font-weight: bold;
+}
+#container .container_major {
+   width: 100%;
+   background: rgb(180, 180, 180);
+}
+#container #header {
+   padding: 20px 50px;
+   background-color: #38474f;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+#container .container_major .usuario {
+   display: flex;
+   align-items: center;
+}
+#container .container_major .usuario img {
+   width: 50px;
+   margin-right: 10px;
+}
+#container #header .user {
+   display: flex;
+   align-items: center;
+}
+.container_major .totales {
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+}
+.container_major .totales a .total{
+   width: 450px;
+   height: 200px;
+   margin: 20px 10px;
+   background-color: #fff;
+   border-radius: 20px;
+   display: flex;
+   justify-content: space-between;
+   flex-wrap: wrap;
+   transition: all ease-out .3s;
+}
+.container_major .totales a {
+   text-decoration: none;
+}
+.container_major .totales a:hover .total{
+   box-shadow: 0 0 15px #000;
+   transform: scale(1.02);
+}
+.container_major .totales a .total .titulo {
+   padding-left: 30px;
+   color: #000;
+   position: relative;
+   top: 110px;
+   font-size: 20px;
+}
+.container_major .totales a .total .titulo h3:nth-child(1) {
+   font-size: 40px;
+}
+.container_major .totales a .total .icono {
+   width: 200px;
+   height: 200px;
+   border-radius: 20px;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #fff;
+   font-size: 75px;
+}
+.ven {
+   background-color: rgb(72, 184, 0);
+}
+.inv {
+   background-color: rgb(184, 107, 0);
+}
+.cli {
+   background-color: rgb(0, 169, 184);
+}
+.mde {
+   background-color: rgb(152, 0, 184);
+}
+table th {
+   text-align: left;
+   padding: 0 18px;
+   font-size: 20px;
+}
+@media screen and (max-width: 768px) {
+   #container #header {
+      padding: 10px 20px;
+   }
+   #container #header .usuario {
+      display: none;
+   }
+   #container #header .user img {
+      width: 2.5em;
+   }
+   #container #header h1 {
+      font-size: 25px;
+   }
+   #container .barra {
+   }
+   #container .barra .buscar {
+      position: relative;
+      top: -25px;
+      left: -85px;
+   }
+   #container .barra .botton {
+      width: 300px;
+      padding: 0;
+      display: flex;
+      position: relative;
+      top: -25px;
+      left: -100px;
+   }
+   #container .barra .botton #new_client {
+      font-size: 16px;
+      padding: 5px 10px;
+   }
+   #container .container_major .customer_list table {
+      display: flex;
+   }
+   .container_major .totales a .total {
+      width: 300px;
+      height: 150px;
+   }
+   .container_major .totales a .total .titulo {
+      padding-left: 10px;
+      position: relative;
+      top: 80px;
+      font-size: 10px;
+   }
+   .container_major .totales a .total .icono {
+      width: 150px;
+      height: 150px;
+      border-radius: 20px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: #fff;
+      font-size: 50px;
+   }
+}

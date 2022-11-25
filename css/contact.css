@@ -1,0 +1,116 @@
+.banner .imagen_texto .mostrar_h1 {
+   position: relative;
+   right: 10%;
+}
+.main .contact {
+   width: 95%;
+   margin: auto;
+   margin-bottom: 75px;
+   padding-bottom: 75px;
+   display: flex;
+   flex-wrap: wrap;
+   justify-content:space-around;
+   border-bottom: 5px solid #4f2c0e;
+}
+.main .contact img {
+   width: 1450px;
+   height: 900px;
+}
+.main .contact .container_conctact {
+   width: 500px;
+}
+.main .contact .container_conctact h1 {
+   font-size: 50px;
+   color: #4f2c0e;
+   margin-bottom: 100px;
+}
+.main .contact .container_conctact .formulario__label {
+   font-size: 20px;
+   font-weight: 200;
+   color: #745c47;
+}
+.main .contact .container_conctact .formulario__input-txt, .formulario__textarea {
+   margin-bottom: 50px;
+   padding: 5px 10px;
+   border: 0px;
+   border-bottom: 2px solid #745c47;
+   font-size: 16px;
+}
+.main .contact .container_conctact .formulario__input-txt:hover, .formulario__textarea:hover {
+   border-bottom: 3px solid #745c47;
+}
+.main .contact .container_conctact .formulario__btn {
+   padding: 15px 75px;
+   font-size: 20px;
+   color: white;
+   background-color: #745c47;
+   border: 0px;
+   transition: all ease-out 0.5s;
+}
+.main .contact .container_conctact .formulario__btn:hover {
+   color: #745c47;
+   background-color: rgb(96, 2, 19, 0);
+   border: 1px solid #745c47;
+}
+.main .contact .container_conctact .formulario__input-txt:focus, .formulario__textarea:focus {
+   padding: 5px 10px;
+   border: 0px;
+   border-bottom: 3px solid #745c47;
+}
+.borde {
+   width: 100px;
+   height: 5px;
+   margin-bottom: 50px;
+   background-color: #745c47;
+}
+#exito {
+   width: 300px;
+   height: 200px;
+   background: rgba(0, 0, 0, 0.6);
+   color: white;
+   align-items: center;
+   position: absolute;
+   top: 50%;
+   left: 50%;
+}
+@media screen and (max-width: 1920px) {
+   .banner .imagen_texto .mostrar_h1 {
+      position: relative;
+      left: 5%;
+   }
+   .banner .imagen_texto .mostrar_h1 h1 {
+      font-size: 60px;
+   }
+   .main .contact img {
+      width: 1000px;
+      height: 700px;
+   }
+}
+@media screen and (max-width: 1366px) {
+   .main .contact {
+      width: 100%;
+   }
+   .main .contact img {
+      width: 500px;
+      height: 300px;
+   }
+
+}
+@media screen and (min-width: 768px) {
+   .main .contact .container_conctact h1 {
+      width: 90%;
+      margin: auto;
+      padding-bottom: 50px;
+      font-size: 35px;
+   }
+   .main .contact .container_conctact .formulario__btn {
+      color: black;
+      background-color: #81b0be;
+   }
+}
+@media screen and (min-width: 480px) {
+   .main .contact .container_conctact .formulario__btn {
+      color: black;
+      background-color: #81b0be;
+   }
+}
