@@ -164,7 +164,7 @@
 
    <div class="fondo_ver_info hide_font">
       <div class="clientes">
-         <p id="cerrar_info" onclick="cerrar_info()">X</p>
+         <p id="cerrar_info">X</p>
 
          <div class="center">
             <form class="acualizar_cliente" action="index.html" method="post">

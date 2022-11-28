@@ -7,7 +7,7 @@
 
    <link rel="stylesheet" href="../css/main.css">
    <link rel="stylesheet" href="../css/major.css">
-   <link rel="stylesheet" href="../css/registration_forms.css">
+   <link rel="stylesheet" href="../css/window.css">
    <link rel="stylesheet" href="../css/customers.css">
    <link rel="stylesheet" href="../css/buttons.css">
    <link rel="stylesheet" href="../css/inputs.css">
