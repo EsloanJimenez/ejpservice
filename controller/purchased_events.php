@@ -15,15 +15,11 @@
    <link rel="stylesheet" href="../css/purchased_events.css">
 
    <style>
+      .btn_delete, .btn_update {
+         width: 20px;
+      }
       .hide_font {
          display: none;
-      }
-      #cabezera {
-         position: relative;
-         top: 5px;
-      }
-      #cabezera th {
-         font-size: 16px;
       }
    </style>
 
@@ -174,7 +170,7 @@
             <h2>Lista De Eventos Comprados</h2>
 
             <table>
-                  <tr id="cabezera">
+                  <tr class="cabezera">
                      <th>ID</th>
                      <th>NOMBRE CAMARERO</th>
                      <th>FECHA</th>
@@ -255,7 +251,7 @@
             <h2>Lista De Eventos Por Pagar</h2>
 
             <table>
-                  <tr id="cabezera">
+                  <tr class="cabezera">
                      <th>ID</th>
                      <th>NOMBRE CAMARERO</th>
                      <th>FECHA</th>
