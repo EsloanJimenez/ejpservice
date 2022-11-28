@@ -8,12 +8,11 @@
 
    <link rel="stylesheet" href="../css/main.css">
    <link rel="stylesheet" href="../css/major.css">
-   <link rel="stylesheet" href="../css/registration_forms.css">
+   <link rel="stylesheet" href="../css/window.css">
    <link rel="stylesheet" href="../css/customers.css">
    <link rel="stylesheet" href="../css/sales.css">
    <link rel="stylesheet" href="../css/buttons.css">
    <link rel="stylesheet" href="../css/inputs.css">
-
 
    <style>
       .btn_delete, .btn_update, .btn_view {
@@ -25,6 +24,9 @@
       }
       .sales_list {
          height: 42vh;
+      }
+      .hide_font{
+         display: none;
       }
    </style>
 
@@ -43,7 +45,7 @@
       //$registrar = $conexion->query("SELECT * FROM sales")->fetchAll(PDO::FETCH_OBJ);
       $registrar = $conexion->query(
          "SELECT c.name,
-         s.id_sales, s.description, s.customer, s.date, s.amount, s.price, (s.amount * s.price) total
+         s.id_sales, s.description, s.customer, s.date, DATE_FORMAT(s.date, '%d/%m/%Y') AS new_date, s.time, s.amount, s.price, (s.amount * s.price) total, s.comment
          FROM customers c RIGHT JOIN sales s ON s.customer = c.id_customers
          ORDER BY s.id_sales DESC"
       )->fetchAll(PDO::FETCH_OBJ);
@@ -59,13 +61,15 @@
          $description = $_POST['description'];
          $customer = $_POST['customer'];
          $date = $_POST['date'];
+         $time = $_POST['time'];
          $amount = $_POST['amount'];
          $price = $_POST['price'];
+         $comment = $_POST['comment'];
 
-         $consulta = "INSERT INTO sales (description, customer, date, amount, price) VALUES (:des, :cus, :dat, :amo, :pri)";
+         $consulta = "INSERT INTO sales (description, customer, date, time, amount, price, comment) VALUES (:des, :cus, :dat, :tim, :amo, :pri, :com)";
 
          $resultado = $conexion->prepare($consulta);
-         $resultado->execute(array(":des"=>$description,":cus"=>$customer, ":dat"=>$date, ":amo"=>$amount, ":pri"=>$price));
+         $resultado->execute(array(":des"=>$description,":cus"=>$customer, ":dat"=>$date, ":tim"=>$time, ":amo"=>$amount, ":pri"=>$price, ":com"=>$comment));
 
          header("Location:sales.php");
       }
@@ -92,7 +96,7 @@
       <!-- NUEVA VENTA -->
       <div class="new_customer_fund hide_font">
          <div class="customer">
-            <p class="clouse_client" onclick="clouse_client()">X</p>
+            <p class="clouse_client">X</p>
 
             <div class="center">
                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
@@ -118,13 +122,19 @@
                         </td>
                      </tr>
                      <tr>
-                        <td><input type="datetime-local" id="date" name="date"></td>
+                        <td><input type="date" id="date" name="date"></td>
+                     </tr>
+                     <tr>
+                        <td><input type="time" id="time" name="time"></td>
                      </tr>
                      <tr>
                         <td><input type="number" id="amount" name="amount" placeholder="Cantidad"></td>
                      </tr>
                      <tr>
                         <td><input type="number" id="price" name="price" placeholder="Precio"></td>
+                     </tr>
+                     <tr>
+                        <td> <textarea id="comment" name="comment" rows="4" cols="30" placeholder="Comentario" maxlength="100"></textarea> </td>
                      </tr>
                      <tr>
                         <td colspan="2" style="text-align: center" class="btn_registrar"><input type="submit" name="insertar_venta" value="Registrar"></td>
@@ -139,7 +149,7 @@
       <!-- AGREGAR CAMARERO AL EVENTO -->
       <div class="new_waiter_background hide_font">
          <div class="customer">
-            <p class="clouse_client" onclick="clouse_client_event()">X</p>
+            <p class="clouse_client_wait">X</p>
 
             <div class="center">
                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
@@ -221,12 +231,11 @@
             </form>
 
             <div class="botton">
-               <button type="button" class="btn_register" onclick="add_waiter_to_event()">Agregar Camarero Al Evento</button>
+               <button type="button" class="btn_register add_waiter_to_event">Agregar Camarero Al Evento</button>
             </div>
 
             <div class="botton">
-               <button type="button" class="btn_register" onclick="new_client()">Nueva Venta</button>
-               <button type="button" name="config_cliente" id="config_cliente" class="neutral">...</button>
+               <button type="button" class="btn_register" id="new_client">Nueva Venta</button>
             </div>
          </div>
 
@@ -239,22 +248,24 @@
                      <th>DESCRIPCION</th>
                      <th>CLIENTE</th>
                      <th>FECHA</th>
+                     <th>HORA</th>
                      <th>CANTIDAD</th>
                      <th>PRECIO</th>
                      <th>TOTAL</th>
                   </tr>
                   <?php foreach ($registrar as $miembro_equipo): ?>
-                     <tr class="cuerpo">
+                     <tr class="cuerpo" title="<?php echo $miembro_equipo->comment ?>">
                         <td class="registros"><?php echo $miembro_equipo->id_sales ?></td>
                         <td class="registros"><?php echo $miembro_equipo->description ?></td>
                         <td class="registros"><?php echo $miembro_equipo->name ?></td>
-                        <td class="registros"><?php echo $miembro_equipo->date ?></td>
+                        <td class="registros"><?php echo $miembro_equipo->new_date ?></td>
+                        <td class="registros"><?php echo $miembro_equipo->time ?></td>
                         <td class="registros"><?php echo $miembro_equipo->amount ?></td>
                         <td class="registros"><?php echo $miembro_equipo->price ?></td>
                         <td class="registros"><?php echo $miembro_equipo->total ?></td>
                         <td>
                            <!-- VER HISOTRIAL DE VENTAS -->
-                           <a href="info_event.php?id=<?php echo $miembro_equipo->id_sales ?> & des=<?php echo $miembro_equipo->description ?> & cus=<?php echo $miembro_equipo->name ?> & dat=<?php echo $miembro_equipo->date ?> & amo=<?php echo $miembro_equipo->amount ?> & pri=<?php echo $miembro_equipo->price?> & tot=<?php echo $miembro_equipo->total ?>">
+                           <a href="info_event.php?id=<?php echo $miembro_equipo->id_sales?>& des=<?php echo $miembro_equipo->description?>& cus=<?php echo $miembro_equipo->name?>& dat=<?php echo $miembro_equipo->date?>& tim=<?php echo $miembro_equipo->time?>& amo=<?php echo $miembro_equipo->amount?>& pri=<?php echo $miembro_equipo->price?>& com=<?php echo $miembro_equipo->comment?>& tot=<?php echo $miembro_equipo->total?>">
                               <i class="btn_view fa-solid fa-user-pen" id="historial_ventas" name="historial_ventas"></i>
                            </a>
 
@@ -262,7 +273,7 @@
                            <a href="delete_sales.php?id_sa=<?php echo $miembro_equipo->id_sales ?>"><i class="btn_delete fa-solid fa-user-minus" name="eliminar"></i></a>
 
                            <!-- BOTON DE ACTUALIZAR -->
-                           <a href="update_sales.php?id_sa=<?php echo $miembro_equipo->id_sales ?> & des=<?php echo $miembro_equipo->description ?> & cus=<?php echo $miembro_equipo->customer ?> & dat=<?php echo $miembro_equipo->date ?> & amo=<?php echo $miembro_equipo->amount ?> & pri=<?php echo $miembro_equipo->price ?>"><i class="btn_update fa-solid fa-user-gear" name="actualizar"></i></a>
+                           <a href="update_sales.php?id_sa=<?php echo $miembro_equipo->id_sales ?> & des=<?php echo $miembro_equipo->description ?> & cus=<?php echo $miembro_equipo->customer ?> & dat=<?php echo $miembro_equipo->date ?> & tim=<?php echo $miembro_equipo->time ?> & amo=<?php echo $miembro_equipo->amount ?> & pri=<?php echo $miembro_equipo->price ?> & com=<?php echo $miembro_equipo->comment ?>"><i class="btn_update fa-solid fa-user-gear" name="actualizar"></i></a>
                         </td>
                         <td class="separador">-----------------------------------------</td>
                      </tr>

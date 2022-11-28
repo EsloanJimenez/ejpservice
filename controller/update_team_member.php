@@ -104,8 +104,6 @@
                         <td><label for="nom"></label><input type="text" name="nom" id="nom" value="<?php echo $nom ?>"></td>
                         <td><label for="ced"></label><input type="text" name="ced" id="ced" value="<?php echo $ced ?>"></td>
                         <td><label for="cel"></label><input type="text" name="cel" id="cel" value="<?php echo $cel ?>"></td>
-                        <td><label for="sex"></label><input type="text" name="sex" id="sex" value="<?php echo $sex ?>"></td>
-
                         <td><label for="sex">
                            <div class="select">
                               <select id="sex" name="sex">

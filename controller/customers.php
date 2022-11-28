@@ -8,7 +8,7 @@
 
    <link rel="stylesheet" href="../css/main.css">
    <link rel="stylesheet" href="../css/major.css">
-   <link rel="stylesheet" href="../css/registration_forms.css">
+   <link rel="stylesheet" href="../css/window.css">
    <link rel="stylesheet" href="../css/customers.css">
    <link rel="stylesheet" href="../css/buttons.css">
    <link rel="stylesheet" href="../css/inputs.css">
@@ -17,6 +17,9 @@
       .btn_delete, .btn_update, .btn_view {
          width: 20px;
          padding: 10px;
+      }
+      .hide_font{
+         display: none;
       }
    </style>
 
@@ -73,7 +76,7 @@
       <!-- NUEVO CLIENTE -->
       <div class="new_customer_fund hide_font">
          <div class="customer">
-            <p class="clouse_client" onclick="clouse_client()">X</p>
+            <p class="clouse_client">X</p>
 
             <div class="center">
                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
@@ -117,8 +120,7 @@
             </form>
 
             <div class="botton">
-               <button type="button" name="new_client" id="new_client" class="btn_register" onclick="new_client()">Nuevo Cliente</button>
-               <button type="button" name="config_cliente" id="config_cliente" class="neutral">...</button>
+               <button type="button" name="new_client" id="new_client" class="btn_register">Nuevo Cliente</button>
             </div>
          </div>
 

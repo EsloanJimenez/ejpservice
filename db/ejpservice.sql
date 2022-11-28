@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 25-11-2022 a las 19:51:35
+-- Tiempo de generación: 28-11-2022 a las 11:45:29
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 8.1.10
 
@@ -65,7 +65,8 @@ INSERT INTO `bill` (`id_bill`, `user_admin`, `description`, `date`, `amount`, `p
 (1, 1, 'Logo animado', '2022-09-16 16:00:00', 1, 4000),
 (2, 1, 'Pago impuestos', '2022-09-16 17:00:00', 1, 2400),
 (4, 1, 'Publicida', '2022-08-16 17:33:00', 1, 550),
-(5, 1, 'Copia Para Certificado De Registro Mercantil', '2022-11-22 08:00:00', 1, 500);
+(5, 1, 'Copia Para Certificado De Registro Mercantil', '2022-11-22 08:00:00', 1, 500),
+(6, 1, 'Pago inpuesto # Referencia 22954539315-0', '2022-11-25 16:00:00', 1, 600);
 
 -- --------------------------------------------------------
 
@@ -196,10 +197,10 @@ INSERT INTO `payment_waiter` (`id_payment_waiter`, `name`, `date`, `event`, `pay
 (82, 'Nathaly Mota', '2022-11-17 06:00:00', 27, 1000, 'Pagado'),
 (83, 'Luisa Mateo', '2022-11-17 12:00:00', 28, 1000, 'Pagado'),
 (84, 'Luisa Mateo', '2022-11-18 12:00:00', 29, 1000, 'Pagado'),
-(85, 'Luisa Mateo', '2022-11-21 12:00:00', 30, 1000, 'Por Pagar'),
-(86, 'Luisa Mateo', '2022-11-22 12:00:00', 31, 1000, 'Por Pagar'),
-(87, 'Luisa Mateo', '2022-11-23 12:00:00', 32, 1000, 'Por Pagar'),
-(88, 'Luisa Mateo', '2022-11-23 12:00:00', 33, 1000, 'Por Pagar'),
+(85, 'Luisa Mateo', '2022-11-21 12:00:00', 30, 1000, 'Pagado'),
+(86, 'Luisa Mateo', '2022-11-22 12:00:00', 31, 1000, 'Pagado'),
+(87, 'Luisa Mateo', '2022-11-23 12:00:00', 32, 1000, 'Pagado'),
+(88, 'Luisa Mateo', '2022-11-23 12:00:00', 33, 1000, 'Pagado'),
 (90, 'Esloan Jimenez', '2022-12-10 09:00:00', 35, 2800, 'Por Pagar'),
 (91, 'Tomas Encarnacion', '2022-12-10 09:00:00', 35, 2800, 'Por Pagar'),
 (92, 'Yhennifer Abreu', '2022-12-10 10:30:00', 35, 1800, 'Por Pagar'),
@@ -257,7 +258,12 @@ INSERT INTO `purchased_events` (`id_purchased_events`, `team_member`, `date`, `t
 (17, 23, '2022-11-13', '08:00:00', 'Embassy Suite', 1350, 1200, 'Pagado'),
 (18, 6, '2022-11-16', '10:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
 (19, 6, '2022-11-22', '07:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
-(20, 7, '2022-11-22', '12:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar');
+(20, 7, '2022-11-22', '12:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
+(21, 6, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
+(22, 6, '2022-12-02', '17:30:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
+(23, 9, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
+(24, 8, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
+(25, 8, '2022-12-02', '17:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar');
 
 -- --------------------------------------------------------
 
@@ -269,50 +275,53 @@ CREATE TABLE `sales` (
   `id_sales` int NOT NULL,
   `description` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   `customer` int NOT NULL,
-  `date` datetime DEFAULT NULL,
+  `date` date DEFAULT NULL,
+  `time` time NOT NULL,
   `amount` int NOT NULL,
-  `price` int NOT NULL
+  `price` int NOT NULL,
+  `comment` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
 -- Volcado de datos para la tabla `sales`
 --
 
-INSERT INTO `sales` (`id_sales`, `description`, `customer`, `date`, `amount`, `price`) VALUES
-(1, 'Boda Cristiana', 1, '2022-10-15 16:00:00', 5, 2200),
-(2, '15 años salon sin fonia', 1, '2022-07-23 17:00:00', 3, 2100),
-(3, 'boda salon sinfonia', 1, '2022-06-18 19:47:00', 3, 2100),
-(4, 'Cumple año infantil', 3, '2022-07-03 16:00:00', 2, 2300),
-(5, 'Boda Villa Mella', 3, '2022-08-24 10:00:00', 2, 3500),
-(6, 'Graduacion Irene', 1, '2022-10-01 17:00:00', 3, 3200),
-(7, 'Coffe Breack y Almuerzo', 4, '2022-07-07 07:00:00', 2, 1800),
-(8, 'Punta Cana Viernes', 6, '2022-08-05 17:00:00', 10, 2500),
-(9, 'Punta Cana Sabado', 6, '2022-08-06 17:00:00', 10, 2500),
-(10, 'Punta Cana Domingo', 6, '2022-08-07 17:00:00', 10, 2500),
-(11, 'Punta Cana Lunes', 6, '2022-08-22 17:00:00', 3, 4300),
-(12, 'Boda Boca Chica', 5, '2022-10-22 15:00:00', 2, 3500),
-(13, 'Evento Profesores', 2, '2022-10-20 06:00:00', 2, 1500),
-(14, 'Cafeteria', 2, '2022-07-22 06:00:00', 2, 1400),
-(15, 'Cafeteria', 2, '2022-06-06 06:00:00', 3, 1400),
-(16, 'Innauguracion de colegio en San Cristobal', 7, '2022-11-06 09:00:00', 2, 3000),
-(17, 'Innauguracion de colegio en San Cristobal', 7, '2022-11-06 16:00:00', 2, 2500),
-(18, 'Cafeteria', 2, '2022-11-11 11:00:00', 1, 1200),
-(19, 'Cafeteria Lunes 6Am', 2, '2022-11-14 06:00:00', 2, 1200),
-(20, 'Cafeteria Lunes 11AM', 2, '2022-11-14 11:01:00', 1, 1200),
-(21, 'Cafeteria Martes 6AM', 2, '2022-11-15 06:00:00', 1, 1200),
-(22, 'Cafeteria Martes 12PM ', 2, '2022-11-15 12:00:00', 1, 1200),
-(23, 'Cafeteria Miercoles 6AM', 2, '2022-11-16 06:00:00', 1, 1200),
-(24, 'Cafeteria Miercoles 12PM', 2, '2022-11-16 12:00:00', 1, 1200),
-(25, 'Josep casa club  unos 15 años', 3, '2022-11-19 17:00:00', 4, 3500),
-(26, 'Guachi Bebida   ', 5, '2022-11-19 14:45:00', 1, 3000),
-(27, 'Cafeteria Jueves 6AM', 2, '2022-11-17 06:00:00', 1, 1200),
-(28, 'Cafeteria Jueves 12PM', 2, '2022-11-17 12:00:00', 1, 1200),
-(29, 'Cafeteria Viernes 12PM', 2, '2022-11-18 12:00:00', 1, 1200),
-(30, 'Cafeteria Lunes 12PM ', 2, '2022-11-21 12:00:00', 1, 1200),
-(31, 'Cafeteria Martes 12PM ', 2, '2022-11-22 12:00:00', 1, 1200),
-(32, 'Cafeteria Miercoles 12PM', 2, '2022-11-23 12:00:00', 1, 1200),
-(33, 'Cafeteria Jueves 12PM', 2, '2022-11-24 12:00:00', 1, 1200),
-(35, 'Fiesta Navideña', 3, '2022-12-10 10:00:00', 18, 2800);
+INSERT INTO `sales` (`id_sales`, `description`, `customer`, `date`, `time`, `amount`, `price`, `comment`) VALUES
+(1, 'Boda Cristiana', 1, '2022-10-15', '16:00:00', 5, 2200, ''),
+(2, '15 años salon sin fonia', 1, '2022-07-23', '17:00:00', 3, 2100, ''),
+(3, 'boda salon sinfonia', 1, '2022-06-18', '19:47:00', 3, 2100, ''),
+(4, 'Cumple año infantil', 3, '2022-07-03', '16:00:00', 2, 2300, ''),
+(5, 'Boda Villa Mella', 3, '2022-08-24', '10:00:00', 2, 3500, ''),
+(6, 'Graduacion Irene', 1, '2022-10-01', '17:00:00', 3, 3200, ''),
+(7, 'Coffe Breack y Almuerzo', 4, '2022-07-07', '07:00:00', 2, 1800, ''),
+(8, 'Punta Cana Viernes', 6, '2022-08-05', '17:00:00', 10, 2500, ''),
+(9, 'Punta Cana Sabado', 6, '2022-08-06', '17:00:00', 10, 2500, ''),
+(10, 'Punta Cana Domingo', 6, '2022-08-07', '17:00:00', 10, 2500, ''),
+(11, 'Punta Cana Lunes', 6, '2022-08-22', '17:00:00', 3, 4300, ''),
+(12, 'Boda Boca Chica', 5, '2022-10-22', '15:00:00', 2, 3500, ''),
+(13, 'Evento Profesores', 2, '2022-10-20', '06:00:00', 2, 1500, ''),
+(14, 'Cafeteria', 2, '2022-07-22', '06:00:00', 2, 1400, ''),
+(15, 'Cafeteria', 2, '2022-06-06', '06:00:00', 3, 1400, ''),
+(16, 'Innauguracion de colegio en San Cristobal', 7, '2022-11-06', '09:00:00', 2, 3000, ''),
+(17, 'Innauguracion de colegio en San Cristobal', 7, '2022-11-06', '16:00:00', 2, 2500, ''),
+(18, 'Cafeteria', 2, '2022-11-11', '11:00:00', 1, 1200, ''),
+(19, 'Cafeteria Lunes 6Am', 2, '2022-11-14', '06:00:00', 2, 1200, ''),
+(20, 'Cafeteria Lunes 11AM', 2, '2022-11-14', '11:00:00', 1, 1200, ''),
+(21, 'Cafeteria Martes 6AM', 2, '2022-11-15', '06:00:00', 1, 1200, ''),
+(22, 'Cafeteria Martes 12PM ', 2, '2022-11-15', '12:00:00', 1, 1200, ''),
+(23, 'Cafeteria Miercoles 6AM', 2, '2022-11-16', '06:00:00', 1, 1200, ''),
+(24, 'Cafeteria Miercoles 12PM', 2, '2022-11-16', '12:00:00', 1, 1200, ''),
+(25, 'Josep casa club  unos 15 años', 3, '2022-11-19', '17:00:00', 4, 3500, ''),
+(26, 'Guachi Bebida   ', 5, '2022-11-19', '15:00:00', 1, 3000, ''),
+(27, 'Cafeteria Jueves 6AM', 2, '2022-11-17', '06:00:00', 1, 1200, ''),
+(28, 'Cafeteria Jueves 12PM', 2, '2022-11-17', '12:00:00', 1, 1200, ''),
+(29, 'Cafeteria Viernes 12PM', 2, '2022-11-18', '12:00:00', 1, 1200, ''),
+(30, 'Cafeteria Lunes 12PM ', 2, '2022-11-21', '12:00:00', 1, 1200, ''),
+(31, 'Cafeteria Martes 12PM ', 2, '2022-11-22', '12:00:00', 1, 1200, ''),
+(32, 'Cafeteria Miercoles 12PM', 2, '2022-11-23', '12:00:00', 1, 1200, ''),
+(33, 'Cafeteria Jueves 12PM', 2, '2022-11-24', '12:00:00', 1, 1200, ''),
+(35, 'Fiesta Navideña', 3, '2022-12-10', '10:00:00', 18, 2800, 'Falta aclarar lo de los bares y nos falta personal'),
+(37, 'Cafeteria Lunes 12PM', 2, '2022-11-28', '12:00:00', 1, 1200, 'Trabajar en la cafeteria');
 
 -- --------------------------------------------------------
 
@@ -393,7 +402,7 @@ INSERT INTO `team_member` (`id_team_member`, `photo`, `name`, `identification_ca
 (54, 0x416e66656e6954656a6164612e706e67, 'Anfeni Tejada Placencio', '402-3457254-9', 'Masculino', '8292040300', 'Arroye', 'No Tiene', 'No Tiene', ''),
 (55, 0x427279616e2074696d6f6e69656c2072616d697265732e6a706567, 'Brayan Ramirez', '402-1868514-3', 'Masculino', '8494721403', 'Grupo C', 'No Tiene', 'No Tiene', ''),
 (56, 0x4672616e73697320436f6e74726572612e6a706567, 'Fransis Contrera', '225-0068860-5', 'Masculino', '8293546782', 'Grupo A', 'No Tiene', 'No Tiene', ''),
-(57, 0x4372697374696e612052697661732e6a706567, 'Cristina Rivas', '001-1533805-5', 'Femenina', '8494324560', 'Arroye', 'No Tiene', 'No Tiene', ''),
+(57, 0x4372697374696e612052697661732e6a706567, 'Cristina Rivas ', '001-1533805-5', 'Femenina', '8494324560 ', 'Arroye', 'Banreservas', 'Ahorro', '230440877'),
 (58, 0x4c75697361204d6174656f2e6a706567, 'Luisa Mateo', '107-0001424-3', 'Femenina', '8097060404', 'Arroye', 'Popular', 'Corriente', '820212025'),
 (59, 0x4e69636f6c204375657661732e6a706567, 'Nicol Cuevas', '402-0979408-6', 'Femenina', '8298652087', 'Arroye', 'Banreservas', 'Ahorro', '9603389217'),
 (60, 0x53637265656e73686f7420323032322d31312d3131203132303132382e706e67, 'Onel Santana', '027-0043965-2', 'Masculino', '8298152347', 'Grupo B', 'No Tiene', 'No Tiene', ''),
@@ -410,7 +419,14 @@ INSERT INTO `team_member` (`id_team_member`, `photo`, `name`, `identification_ca
 (72, 0x4a6f73656c696e537565726f2e706e67, 'Joselin Suero', '016-0020622-9', 'Masculino', '8298909503', 'Grupo D', 'No Tiene', 'No Tiene', ''),
 (73, 0x536172686153616e74616e612e6a706567, 'Sarha Santana', '223-0176386-2', 'Femenina', '8099492931', 'Grupo C', 'No Tiene', 'No Tiene', ''),
 (74, 0x4e617468616c79204d6f74612e6a706567, 'Nathaly Mota', '001-1843982-7', 'Femenina', '8093861091', 'Grupo C', 'Banreservas', 'Ahorro', '9603431283'),
-(75, 0x4a6f636b65696469536f73612e706e67, 'Jockeidi Sosa', '073-0018152-1', 'Masculino', '0000000000', 'Grupo C', 'No Tiene', 'No Tiene', '');
+(75, 0x4a6f636b65696469536f73612e706e67, 'Jockeidi Sosa', '073-0018152-1', 'Masculino', '0000000000', 'Grupo C', 'No Tiene', 'No Tiene', ''),
+(76, 0x456c736120526f736172696f2e6a706567, 'Elsa Rosario', '224-0053977-5', 'Femenina', '8094027708', 'Grupo B', 'No Tiene', 'No Tiene', ''),
+(77, 0x416e6162656c204465204c6120526f73612e6a706567, 'Anabel De La Rosa', '001-158484-1', 'Femenina', '8096689755', 'Grupo C', 'No Tiene', 'No Tiene', ''),
+(78, 0x526f73696f204465204c6120526f73612e6a706567, 'Rosio De La Rosa', '402-3371144-5', 'Femenina', '8092604730', 'Grupo C', 'Banreservas', 'Ahorro', '9602601901'),
+(79, 0x6d6972696120636162612e6a706567, 'Miria Caba', '402-2801826-9', 'Femenina', '8293811976', 'Grupo C', 'Banreservas', 'Ahorro', '9604218502'),
+(80, 0x437269737469616e20526f6e646f6d2e6a706567, 'Cristian Rondom', '001-1150223-3', 'Masculino', '8097136596', 'Grupo A', 'No Tiene', 'No Tiene', ''),
+(81, 0x4d6f72656c69732054656a6564612e6a706567, 'Morelis Tejeda', '402-0075574-8', 'Femenina', '8297548790', 'Grupo A', 'Promerica', 'Ahorro', '11010500020718'),
+(82, 0x4a6f726765204d61727465732e6a706567, 'Jorge Martes', '047-0161858-1', 'Masculino', '8492576385', 'Grupo A', 'Popular', 'Ahorro', '816217863');
 
 --
 -- Índices para tablas volcadas
@@ -476,7 +492,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT de la tabla `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id_bill` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id_bill` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `customers`
@@ -494,19 +510,19 @@ ALTER TABLE `payment_waiter`
 -- AUTO_INCREMENT de la tabla `purchased_events`
 --
 ALTER TABLE `purchased_events`
-  MODIFY `id_purchased_events` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
+  MODIFY `id_purchased_events` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT de la tabla `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id_sales` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=36;
+  MODIFY `id_sales` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
 
 --
 -- AUTO_INCREMENT de la tabla `team_member`
 --
 ALTER TABLE `team_member`
-  MODIFY `id_team_member` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=76;
+  MODIFY `id_team_member` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
 
 --
 -- Restricciones para tablas volcadas

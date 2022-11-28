@@ -25,20 +25,24 @@
          $des = $_GET['des'];
          $cus = $_GET['cus'];
          $dat = $_GET['dat'];
+         $tim = $_GET['tim'];
          $amo = $_GET['amo'];
          $pri = $_GET['pri'];
+         $com = $_GET['com'];
       } else {
          $id = $_POST['id_sa'];
          $des = $_POST['des'];
          $cus = $_POST['cus'];
          $dat = $_POST['dat'];
+         $tim = $_POST['tim'];
          $amo = $_POST['amo'];
          $pri = $_POST['pri'];
+         $com = $_POST['com'];
 
-         $consulta = "UPDATE sales SET description = :miDes, customer = :miCus, date = :miDat, amount = :miAmo, price = :miPri WHERE id_sales = :miId";
+         $consulta = "UPDATE sales SET description = :miDes, customer = :miCus, date = :miDat, time = :miTim, amount = :miAmo, price = :miPri, comment = :miCom WHERE id_sales = :miId";
 
          $resultado = $conexion->prepare($consulta);
-         $resultado->execute(array(":miId"=>$id, ":miDes"=>$des, ":miCus"=>$cus, ":miDat"=>$dat, ":miAmo"=>$amo, ":miPri"=>$pri));
+         $resultado->execute(array(":miId"=>$id, ":miDes"=>$des, ":miTim"=>$tim, ":miCus"=>$cus, ":miDat"=>$dat, ":miAmo"=>$amo, ":miPri"=>$pri, ":miCom"=>$com));
 
          header ("Location:sales.php");
       }
@@ -73,8 +77,10 @@
                      <th>DESCRIPCION</th>
                      <th>CLIENTE</th>
                      <th>FECHA</th>
+                     <th>HORA</th>
                      <th>CANTIDAD</th>
                      <th>PRECIO</th>
+                     <th>COMENTARIO</th>
                   </thead>
                   <tbody>
                      <tr>
@@ -82,8 +88,10 @@
                         <td><label for="des"></label><input type="text" name="des" id="des" value="<?php echo $des ?>"></td>
                         <td><label for="cus"></label><input type="text" name="cus" id="cus" value="<?php echo $cus ?>"></td>
                         <td><label for="dat"></label><input type="text" name="dat" id="dat" value="<?php echo $dat ?>"></td>
+                        <td><label for="tim"></label><input type="text" name="tim" id="tim" value="<?php echo $tim ?>"></td>
                         <td><label for="amo"></label><input type="text" name="amo" id="amo" value="<?php echo $amo ?>"></td>
                         <td><label for="pri"></label><input type="text" name="pri" id="pri" value="<?php echo $pri ?>"></td>
+                        <td><label for="com"></label><input type="text" name="com" id="com" value="<?php echo $com ?>"></td>
                         <td colspan="2"><input type="submit" name="actualizar" class="btn_update" value="Actualizar"></td>
                      </tr>
                   </tbody>

@@ -13,8 +13,14 @@
    padding: 30px;
    border-radius: 20px;
    background-color: #fff;
+   animation: window_float .8s ease-in 0s;
 }
-.new_customer_fund .clouse_client, .new_waiter_background .clouse_client {
+@keyframes window_float {
+   0% {transform: scale(0);}
+   50% {transform: scale(1.3);}
+   100% {transform: scale(1);}
+}
+.new_customer_fund .clouse_client, .new_waiter_background .clouse_client, .clouse_client_wait {
    width: 25px;
    height: 25px;
    padding: 10px;

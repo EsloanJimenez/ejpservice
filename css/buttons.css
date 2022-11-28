@@ -1,4 +1,4 @@
-.neutral {
+.btn_neutral {
    margin: 5px 10px;
    padding: 10px 20px;
    border-radius: 20px;
@@ -8,7 +8,7 @@
    font-size: 18px;
    transition: all ease-out .5s
 }
-.neutral:hover {
+.btn_neutral:hover {
    color: #7f827f;
    border: 1px solid #fff;
    cursor: pointer;
@@ -48,14 +48,13 @@
    cursor: pointer;
 }
 .btn_update {
-   width: 110px;
    margin: 5px 10px;
-   padding: 10px 20px;
+   padding: 5px;
    border: 1px solid #b05d00;
-   border-radius: 20px;
+   border-radius: 5px;
    background-color: #b05d00;
    color: #fff;
-   font-size: 16px;
+   font-size: 10px;
    transition: all ease-out .5s
 }
 
@@ -66,14 +65,13 @@
    background-color: rgba(163, 110, 127, 0.02);
 }
 .btn_delete {
-   width: 100px;
    margin: 5px 10px;
-   padding: 10px 20px;
+   padding: 5px;
    border: 1px solid #b00000;
-   border-radius: 20px;
+   border-radius: 5px;
    background-color: #b00000;
    color: #fff;
-   font-size: 16px;
+   font-size: 10px;
    transition: all ease-out .5s
 }
 

@@ -8,15 +8,22 @@
 
    <link rel="stylesheet" href="../css/main.css">
    <link rel="stylesheet" href="../css/major.css">
-   <link rel="stylesheet" href="../css/registration_forms.css">
+   <link rel="stylesheet" href="../css/window.css">
    <link rel="stylesheet" href="../css/customers.css">
    <link rel="stylesheet" href="../css/buttons.css">
    <link rel="stylesheet" href="../css/inputs.css">
    <link rel="stylesheet" href="../css/purchased_events.css">
 
    <style>
-      .btn_delete, .btn_update {
-         width: 20px;
+      .hide_font {
+         display: none;
+      }
+      #cabezera {
+         position: relative;
+         top: 5px;
+      }
+      #cabezera th {
+         font-size: 16px;
       }
    </style>
 
@@ -81,7 +88,7 @@
       <!-- NUEVO EVENTO COMPRADO -->
       <div class="new_customer_fund hide_font">
          <div class="customer">
-            <p class="clouse_client" onclick="clouse_client()">X</p>
+            <p class="clouse_client">X</p>
 
             <div class="center">
                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
@@ -159,8 +166,7 @@
             </div>
 
             <div class="botton">
-               <button type="button" name="new_client" id="new_client" class="btn_register" onclick="new_client()">Nueva Compra De Evento</button>
-               <button type="button" name="config_cliente" id="config_cliente" class="neutral">...</button>
+               <button type="button" name="new_client" id="new_client" class="btn_register">Nueva Compra De Evento</button>
             </div>
          </div>
 
@@ -168,7 +174,7 @@
             <h2>Lista De Eventos Comprados</h2>
 
             <table>
-                  <tr class="cabezera">
+                  <tr id="cabezera">
                      <th>ID</th>
                      <th>NOMBRE CAMARERO</th>
                      <th>FECHA</th>
@@ -236,6 +242,7 @@
                      <td></td>
                      <td></td>
                      <td></td>
+                     <td></td>
                      <td class="totals"><?php echo $full_collect; ?></td>
                      <td class="totals"><?php echo $full_pay; ?></td>
                      <td class="totals"><?php echo $full_gain; ?></td>
@@ -248,7 +255,7 @@
             <h2>Lista De Eventos Por Pagar</h2>
 
             <table>
-                  <tr class="cabezera">
+                  <tr id="cabezera">
                      <th>ID</th>
                      <th>NOMBRE CAMARERO</th>
                      <th>FECHA</th>
@@ -290,6 +297,7 @@
 
                   <?php endforeach; ?>
                   <tr>
+                     <td></td>
                      <td></td>
                      <td></td>
                      <td></td>

@@ -2,13 +2,16 @@
     height: 83vh;
     overflow: auto;
  }
- .customer_list table #cabezera {
+#cabezera {
     position: relative;
     top: 5px;
  }
+#cabezera th {
+   font-size: 16px;
+}
  .customer_list table tr td img {
-    width: 150px;
-    height: 150px;
+    width: 100px;
+    height: 100px;
     border-radius: 50%;
  }
  .customer_list table tr td[colspan] a{
