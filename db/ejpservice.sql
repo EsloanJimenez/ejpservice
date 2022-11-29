@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Servidor: localhost:3306
--- Tiempo de generación: 28-11-2022 a las 11:45:29
--- Versión del servidor: 8.0.31
--- Versión de PHP: 8.1.10
+-- Host: localhost:3306
+-- Generation Time: Nov 29, 2022 at 03:45 AM
+-- Server version: 8.0.31
+-- PHP Version: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `ejpservice`
+-- Database: `ejpservice`
 --
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `admin`
+-- Table structure for table `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Volcado de datos para la tabla `admin`
+-- Dumping data for table `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `login`, `password`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `admin` (`id_admin`, `login`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `bill`
+-- Table structure for table `bill`
 --
 
 CREATE TABLE `bill` (
@@ -58,7 +58,7 @@ CREATE TABLE `bill` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Volcado de datos para la tabla `bill`
+-- Dumping data for table `bill`
 --
 
 INSERT INTO `bill` (`id_bill`, `user_admin`, `description`, `date`, `amount`, `price`) VALUES
@@ -71,7 +71,7 @@ INSERT INTO `bill` (`id_bill`, `user_admin`, `description`, `date`, `amount`, `p
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `customers`
+-- Table structure for table `customers`
 --
 
 CREATE TABLE `customers` (
@@ -83,7 +83,7 @@ CREATE TABLE `customers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Volcado de datos para la tabla `customers`
+-- Dumping data for table `customers`
 --
 
 INSERT INTO `customers` (`id_customers`, `name`, `company`, `email`, `cell_phone`) VALUES
@@ -93,12 +93,13 @@ INSERT INTO `customers` (`id_customers`, `name`, `company`, `email`, `cell_phone
 (4, 'Vanesa', 'Cooperativa Maestro', '', 'buscarlo!'),
 (5, 'Yaniris Perez', 'Events Planner', 'eventsplannerdr@gmail.com', '8094402605'),
 (6, 'Ana Ramirez', 'Playa Palmera', '', '8092658251'),
-(7, 'Jose Miguel', '', '', '8099669805');
+(7, 'Jose Miguel', '', '', '8099669805'),
+(8, 'probando', 'si no se borra', '', '54');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `payment_waiter`
+-- Table structure for table `payment_waiter`
 --
 
 CREATE TABLE `payment_waiter` (
@@ -111,7 +112,7 @@ CREATE TABLE `payment_waiter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Volcado de datos para la tabla `payment_waiter`
+-- Dumping data for table `payment_waiter`
 --
 
 INSERT INTO `payment_waiter` (`id_payment_waiter`, `name`, `date`, `event`, `payment`, `status`) VALUES
@@ -218,12 +219,14 @@ INSERT INTO `payment_waiter` (`id_payment_waiter`, `name`, `date`, `event`, `pay
 (104, 'Genesis Chakira', '2022-12-10 10:30:00', 35, 1800, 'Por Pagar'),
 (105, 'Esther Perez', '2022-12-10 10:30:00', 35, 1800, 'Por Pagar'),
 (106, 'Nelson Beato', '2022-12-10 10:30:00', 35, 1800, 'Por Pagar'),
-(107, 'Roder Ortega', '2022-12-10 10:30:00', 35, 1800, 'Por Pagar');
+(107, 'Roder Ortega', '2022-12-10 10:30:00', 35, 1800, 'Por Pagar'),
+(108, 'Luisa Mateo', '2022-11-28 12:00:00', 37, 1000, 'Por Pagar'),
+(109, 'Luisa Mateo', '2022-11-29 12:00:00', 38, 1000, 'Por Pagar');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `purchased_events`
+-- Table structure for table `purchased_events`
 --
 
 CREATE TABLE `purchased_events` (
@@ -238,7 +241,7 @@ CREATE TABLE `purchased_events` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Volcado de datos para la tabla `purchased_events`
+-- Dumping data for table `purchased_events`
 --
 
 INSERT INTO `purchased_events` (`id_purchased_events`, `team_member`, `date`, `time`, `hotel`, `hotel_charge`, `waiter_payment`, `status`) VALUES
@@ -262,13 +265,18 @@ INSERT INTO `purchased_events` (`id_purchased_events`, `team_member`, `date`, `t
 (21, 6, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
 (22, 6, '2022-12-02', '17:30:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
 (23, 9, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
-(24, 8, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
-(25, 8, '2022-12-02', '17:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar');
+(24, 12, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
+(25, 12, '2022-12-02', '17:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
+(26, 38, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
+(27, 30, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
+(28, 83, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
+(30, 6, '2022-11-29', '17:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
+(31, 12, '2022-11-29', '17:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `sales`
+-- Table structure for table `sales`
 --
 
 CREATE TABLE `sales` (
@@ -283,7 +291,7 @@ CREATE TABLE `sales` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Volcado de datos para la tabla `sales`
+-- Dumping data for table `sales`
 --
 
 INSERT INTO `sales` (`id_sales`, `description`, `customer`, `date`, `time`, `amount`, `price`, `comment`) VALUES
@@ -321,12 +329,13 @@ INSERT INTO `sales` (`id_sales`, `description`, `customer`, `date`, `time`, `amo
 (32, 'Cafeteria Miercoles 12PM', 2, '2022-11-23', '12:00:00', 1, 1200, ''),
 (33, 'Cafeteria Jueves 12PM', 2, '2022-11-24', '12:00:00', 1, 1200, ''),
 (35, 'Fiesta Navideña', 3, '2022-12-10', '10:00:00', 18, 2800, 'Falta aclarar lo de los bares y nos falta personal'),
-(37, 'Cafeteria Lunes 12PM', 2, '2022-11-28', '12:00:00', 1, 1200, 'Trabajar en la cafeteria');
+(37, 'Cafeteria Lunes 12PM', 2, '2022-11-28', '12:00:00', 1, 1200, 'Trabajar en la cafeteria'),
+(38, 'Cafeteria Martes 12PM', 2, '2022-11-29', '12:00:00', 1, 1200, '');
 
 -- --------------------------------------------------------
 
 --
--- Estructura de tabla para la tabla `team_member`
+-- Table structure for table `team_member`
 --
 
 CREATE TABLE `team_member` (
@@ -343,7 +352,7 @@ CREATE TABLE `team_member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Volcado de datos para la tabla `team_member`
+-- Dumping data for table `team_member`
 --
 
 INSERT INTO `team_member` (`id_team_member`, `photo`, `name`, `identification_card`, `sex`, `cell_phone`, `cluster`, `bank_name`, `bank_account_type`, `account_number`) VALUES
@@ -426,128 +435,131 @@ INSERT INTO `team_member` (`id_team_member`, `photo`, `name`, `identification_ca
 (79, 0x6d6972696120636162612e6a706567, 'Miria Caba', '402-2801826-9', 'Femenina', '8293811976', 'Grupo C', 'Banreservas', 'Ahorro', '9604218502'),
 (80, 0x437269737469616e20526f6e646f6d2e6a706567, 'Cristian Rondom', '001-1150223-3', 'Masculino', '8097136596', 'Grupo A', 'No Tiene', 'No Tiene', ''),
 (81, 0x4d6f72656c69732054656a6564612e6a706567, 'Morelis Tejeda', '402-0075574-8', 'Femenina', '8297548790', 'Grupo A', 'Promerica', 'Ahorro', '11010500020718'),
-(82, 0x4a6f726765204d61727465732e6a706567, 'Jorge Martes', '047-0161858-1', 'Masculino', '8492576385', 'Grupo A', 'Popular', 'Ahorro', '816217863');
+(82, 0x4a6f726765204d61727465732e6a706567, 'Jorge Martes', '047-0161858-1', 'Masculino', '8492576385', 'Grupo A', 'Popular', 'Ahorro', '816217863'),
+(83, 0x4d6172636f732046726961732e6a706567, 'Marcos Frias ', '402-2214240-4', 'Masculino', '8295135215', 'Grupo C', 'No Tiene', 'No Tiene', ''),
+(84, 0x59617269747a6120526f736172696f2e6a706567, 'Yaritza Rosario', '402-4061682-7', 'Femenina', '8298189599', 'Grupo C', 'No Tiene', 'No Tiene', ''),
+(85, 0x4761627269656c6120526f6d616e2e6a706567, 'Gabriela Roman', '402-4807282-5', 'Femenina', '8296967898', 'Grupo C', 'No Tiene', 'No Tiene', '');
 
 --
--- Índices para tablas volcadas
+-- Indexes for dumped tables
 --
 
 --
--- Indices de la tabla `admin`
+-- Indexes for table `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indices de la tabla `bill`
+-- Indexes for table `bill`
 --
 ALTER TABLE `bill`
   ADD PRIMARY KEY (`id_bill`),
   ADD KEY `user_admin` (`user_admin`);
 
 --
--- Indices de la tabla `customers`
+-- Indexes for table `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`id_customers`);
 
 --
--- Indices de la tabla `payment_waiter`
+-- Indexes for table `payment_waiter`
 --
 ALTER TABLE `payment_waiter`
   ADD PRIMARY KEY (`id_payment_waiter`),
   ADD KEY `event` (`event`);
 
 --
--- Indices de la tabla `purchased_events`
+-- Indexes for table `purchased_events`
 --
 ALTER TABLE `purchased_events`
   ADD PRIMARY KEY (`id_purchased_events`),
   ADD KEY `team_member` (`team_member`);
 
 --
--- Indices de la tabla `sales`
+-- Indexes for table `sales`
 --
 ALTER TABLE `sales`
   ADD PRIMARY KEY (`id_sales`),
   ADD KEY `customer` (`customer`);
 
 --
--- Indices de la tabla `team_member`
+-- Indexes for table `team_member`
 --
 ALTER TABLE `team_member`
   ADD PRIMARY KEY (`id_team_member`);
 
 --
--- AUTO_INCREMENT de las tablas volcadas
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT de la tabla `admin`
+-- AUTO_INCREMENT for table `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT de la tabla `bill`
+-- AUTO_INCREMENT for table `bill`
 --
 ALTER TABLE `bill`
   MODIFY `id_bill` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT de la tabla `customers`
+-- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id_customers` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `id_customers` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT de la tabla `payment_waiter`
+-- AUTO_INCREMENT for table `payment_waiter`
 --
 ALTER TABLE `payment_waiter`
-  MODIFY `id_payment_waiter` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=108;
+  MODIFY `id_payment_waiter` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 
 --
--- AUTO_INCREMENT de la tabla `purchased_events`
+-- AUTO_INCREMENT for table `purchased_events`
 --
 ALTER TABLE `purchased_events`
-  MODIFY `id_purchased_events` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id_purchased_events` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT de la tabla `sales`
+-- AUTO_INCREMENT for table `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id_sales` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=38;
+  MODIFY `id_sales` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
 
 --
--- AUTO_INCREMENT de la tabla `team_member`
+-- AUTO_INCREMENT for table `team_member`
 --
 ALTER TABLE `team_member`
-  MODIFY `id_team_member` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=83;
+  MODIFY `id_team_member` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
 
 --
--- Restricciones para tablas volcadas
+-- Constraints for dumped tables
 --
 
 --
--- Filtros para la tabla `bill`
+-- Constraints for table `bill`
 --
 ALTER TABLE `bill`
   ADD CONSTRAINT `bill_ibfk_1` FOREIGN KEY (`user_admin`) REFERENCES `admin` (`id_admin`);
 
 --
--- Filtros para la tabla `payment_waiter`
+-- Constraints for table `payment_waiter`
 --
 ALTER TABLE `payment_waiter`
   ADD CONSTRAINT `payment_waiter_ibfk_1` FOREIGN KEY (`event`) REFERENCES `sales` (`id_sales`);
 
 --
--- Filtros para la tabla `purchased_events`
+-- Constraints for table `purchased_events`
 --
 ALTER TABLE `purchased_events`
   ADD CONSTRAINT `purchased_events_ibfk_1` FOREIGN KEY (`team_member`) REFERENCES `team_member` (`id_team_member`);
 
 --
--- Filtros para la tabla `sales`
+-- Constraints for table `sales`
 --
 ALTER TABLE `sales`
   ADD CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`customer`) REFERENCES `customers` (`id_customers`);
