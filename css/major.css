@@ -1,3 +1,8 @@
+.blur {
+   color: transparent;
+   text-shadow: 0 0 5px rgba(0,0,0,1);
+
+}
 .to_pay {
    color: rgb(170, 0, 0);
    font-weight: 600;
@@ -8,6 +13,13 @@
 }
 #container {
    display: flex;
+}
+table .cuerpo {
+   transition: all ease-in .3s;
+}
+table .cuerpo:hover {
+   box-shadow: 0 0 5px #000;
+   border-radius: 10px;
 }
 .totals {
    font-size: 18px;

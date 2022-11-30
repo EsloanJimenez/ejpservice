@@ -4,6 +4,7 @@
 <head>
    <meta charset="utf-8">
    <title>Informacion Evento</title>
+   <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3, minimum-scale=1">
    <link rel="shortcut icon" href="../img/icon/favicon.png">
 
    <link rel="stylesheet" href="../css/main.css">
@@ -109,7 +110,7 @@
                      </thead>
                      <tbody>
                         <?php foreach($view_event as $view): ?>
-                           <tr>
+                           <tr class="cuerpo">
                               <td><?php $contador++; echo $contador; ?></td>
                               <td><?php echo $view->name ?></td>
                               <?php

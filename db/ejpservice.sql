@@ -2,10 +2,10 @@
 -- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
--- Host: localhost:3306
--- Generation Time: Nov 29, 2022 at 03:45 AM
--- Server version: 8.0.31
--- PHP Version: 8.1.10
+-- Servidor: localhost:3306
+-- Tiempo de generación: 30-11-2022 a las 18:12:27
+-- Versión del servidor: 8.0.31
+-- Versión de PHP: 8.1.10
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -18,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ejpservice`
+-- Base de datos: `ejpservice`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admin`
+-- Estructura de tabla para la tabla `admin`
 --
 
 CREATE TABLE `admin` (
@@ -34,7 +34,7 @@ CREATE TABLE `admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Dumping data for table `admin`
+-- Volcado de datos para la tabla `admin`
 --
 
 INSERT INTO `admin` (`id_admin`, `login`, `password`) VALUES
@@ -45,7 +45,7 @@ INSERT INTO `admin` (`id_admin`, `login`, `password`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `bill`
+-- Estructura de tabla para la tabla `bill`
 --
 
 CREATE TABLE `bill` (
@@ -58,7 +58,7 @@ CREATE TABLE `bill` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Dumping data for table `bill`
+-- Volcado de datos para la tabla `bill`
 --
 
 INSERT INTO `bill` (`id_bill`, `user_admin`, `description`, `date`, `amount`, `price`) VALUES
@@ -71,7 +71,7 @@ INSERT INTO `bill` (`id_bill`, `user_admin`, `description`, `date`, `amount`, `p
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customers`
+-- Estructura de tabla para la tabla `customers`
 --
 
 CREATE TABLE `customers` (
@@ -83,7 +83,7 @@ CREATE TABLE `customers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Dumping data for table `customers`
+-- Volcado de datos para la tabla `customers`
 --
 
 INSERT INTO `customers` (`id_customers`, `name`, `company`, `email`, `cell_phone`) VALUES
@@ -99,7 +99,7 @@ INSERT INTO `customers` (`id_customers`, `name`, `company`, `email`, `cell_phone
 -- --------------------------------------------------------
 
 --
--- Table structure for table `payment_waiter`
+-- Estructura de tabla para la tabla `payment_waiter`
 --
 
 CREATE TABLE `payment_waiter` (
@@ -112,7 +112,7 @@ CREATE TABLE `payment_waiter` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Dumping data for table `payment_waiter`
+-- Volcado de datos para la tabla `payment_waiter`
 --
 
 INSERT INTO `payment_waiter` (`id_payment_waiter`, `name`, `date`, `event`, `payment`, `status`) VALUES
@@ -221,12 +221,18 @@ INSERT INTO `payment_waiter` (`id_payment_waiter`, `name`, `date`, `event`, `pay
 (106, 'Nelson Beato', '2022-12-10 10:30:00', 35, 1800, 'Por Pagar'),
 (107, 'Roder Ortega', '2022-12-10 10:30:00', 35, 1800, 'Por Pagar'),
 (108, 'Luisa Mateo', '2022-11-28 12:00:00', 37, 1000, 'Por Pagar'),
-(109, 'Luisa Mateo', '2022-11-29 12:00:00', 38, 1000, 'Por Pagar');
+(109, 'Luisa Mateo', '2022-11-29 12:00:00', 38, 1000, 'Por Pagar'),
+(110, 'Luisa Mateo', '2022-11-30 12:00:00', 39, 1000, 'Por Pagar'),
+(111, 'Luisa Mateo', '2022-12-01 12:00:00', 40, 1000, 'Por Pagar'),
+(112, 'Esloan Jimenez', '2022-12-09 09:00:00', 41, 5000, 'Por Pagar'),
+(113, 'Tomas Encarnacion', '2022-12-09 09:00:00', 41, 4000, 'Por Pagar'),
+(114, 'Transporte', '2022-12-09 09:00:00', 41, 3000, 'Por Pagar'),
+(115, 'Marcos Nuñez', '2022-12-09 09:00:00', 41, 3000, 'Por Pagar');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `purchased_events`
+-- Estructura de tabla para la tabla `purchased_events`
 --
 
 CREATE TABLE `purchased_events` (
@@ -241,7 +247,7 @@ CREATE TABLE `purchased_events` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Dumping data for table `purchased_events`
+-- Volcado de datos para la tabla `purchased_events`
 --
 
 INSERT INTO `purchased_events` (`id_purchased_events`, `team_member`, `date`, `time`, `hotel`, `hotel_charge`, `waiter_payment`, `status`) VALUES
@@ -269,14 +275,14 @@ INSERT INTO `purchased_events` (`id_purchased_events`, `team_member`, `date`, `t
 (25, 12, '2022-12-02', '17:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
 (26, 38, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
 (27, 30, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
-(28, 83, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
+(28, 87, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
 (30, 6, '2022-11-29', '17:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar'),
 (31, 12, '2022-11-29', '17:00:00', 'Embassy Suite', 1350, 1200, 'Por Pagar');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sales`
+-- Estructura de tabla para la tabla `sales`
 --
 
 CREATE TABLE `sales` (
@@ -291,7 +297,7 @@ CREATE TABLE `sales` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Dumping data for table `sales`
+-- Volcado de datos para la tabla `sales`
 --
 
 INSERT INTO `sales` (`id_sales`, `description`, `customer`, `date`, `time`, `amount`, `price`, `comment`) VALUES
@@ -330,12 +336,15 @@ INSERT INTO `sales` (`id_sales`, `description`, `customer`, `date`, `time`, `amo
 (33, 'Cafeteria Jueves 12PM', 2, '2022-11-24', '12:00:00', 1, 1200, ''),
 (35, 'Fiesta Navideña', 3, '2022-12-10', '10:00:00', 18, 2800, 'Falta aclarar lo de los bares y nos falta personal'),
 (37, 'Cafeteria Lunes 12PM', 2, '2022-11-28', '12:00:00', 1, 1200, 'Trabajar en la cafeteria'),
-(38, 'Cafeteria Martes 12PM', 2, '2022-11-29', '12:00:00', 1, 1200, '');
+(38, 'Cafeteria Martes 12PM', 2, '2022-11-29', '12:00:00', 1, 1200, ''),
+(39, 'Cafeteria Miercoles 12PM', 2, '2022-11-30', '12:00:00', 1, 1200, ''),
+(40, 'Cafeteria Jueves 12PM', 2, '2022-12-01', '12:00:00', 1, 1200, ''),
+(41, 'Bartender Fiesta Navideña', 5, '2022-12-09', '09:00:00', 4, 4000, '1 Capitan de Bares y 2 Bartender para Santiago');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `team_member`
+-- Estructura de tabla para la tabla `team_member`
 --
 
 CREATE TABLE `team_member` (
@@ -352,7 +361,7 @@ CREATE TABLE `team_member` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
--- Dumping data for table `team_member`
+-- Volcado de datos para la tabla `team_member`
 --
 
 INSERT INTO `team_member` (`id_team_member`, `photo`, `name`, `identification_card`, `sex`, `cell_phone`, `cluster`, `bank_name`, `bank_account_type`, `account_number`) VALUES
@@ -438,128 +447,132 @@ INSERT INTO `team_member` (`id_team_member`, `photo`, `name`, `identification_ca
 (82, 0x4a6f726765204d61727465732e6a706567, 'Jorge Martes', '047-0161858-1', 'Masculino', '8492576385', 'Grupo A', 'Popular', 'Ahorro', '816217863'),
 (83, 0x4d6172636f732046726961732e6a706567, 'Marcos Frias ', '402-2214240-4', 'Masculino', '8295135215', 'Grupo C', 'No Tiene', 'No Tiene', ''),
 (84, 0x59617269747a6120526f736172696f2e6a706567, 'Yaritza Rosario', '402-4061682-7', 'Femenina', '8298189599', 'Grupo C', 'No Tiene', 'No Tiene', ''),
-(85, 0x4761627269656c6120526f6d616e2e6a706567, 'Gabriela Roman', '402-4807282-5', 'Femenina', '8296967898', 'Grupo C', 'No Tiene', 'No Tiene', '');
+(85, 0x4761627269656c6120526f6d616e2e6a706567, 'Gabriela Roman', '402-4807282-5', 'Femenina', '8296967898', 'Grupo C', 'No Tiene', 'No Tiene', ''),
+(86, 0x456c656e612050696e6564612e6a706567, 'Elena Pineda', '402-2029927-1', 'Femenina', '8293797407', 'Grupo C', 'No Tiene', 'No Tiene', ''),
+(87, 0x4461797361204d61737369656c20437565746f2e6a706567, 'Daysa Massiel Cueto', '22500641067', 'Femenina', '8092304803', 'Grupo C', 'No Tiene', 'No Tiene', ''),
+(88, 0x7472616e73706f7274652e706e67, 'Transporte', '', 'Masculino', '', 'Grupo A', 'No Tiene', 'No Tiene', ''),
+(89, 0x4d6172636f73204e75c3b1657a2e6a706567, 'Marcos Nuñez', '001-1792483-7', 'Masculino', '8094018595', 'Grupo A', 'No Tiene', 'No Tiene', '');
 
 --
--- Indexes for dumped tables
+-- Índices para tablas volcadas
 --
 
 --
--- Indexes for table `admin`
+-- Indices de la tabla `admin`
 --
 ALTER TABLE `admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `bill`
+-- Indices de la tabla `bill`
 --
 ALTER TABLE `bill`
   ADD PRIMARY KEY (`id_bill`),
   ADD KEY `user_admin` (`user_admin`);
 
 --
--- Indexes for table `customers`
+-- Indices de la tabla `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`id_customers`);
 
 --
--- Indexes for table `payment_waiter`
+-- Indices de la tabla `payment_waiter`
 --
 ALTER TABLE `payment_waiter`
   ADD PRIMARY KEY (`id_payment_waiter`),
   ADD KEY `event` (`event`);
 
 --
--- Indexes for table `purchased_events`
+-- Indices de la tabla `purchased_events`
 --
 ALTER TABLE `purchased_events`
   ADD PRIMARY KEY (`id_purchased_events`),
   ADD KEY `team_member` (`team_member`);
 
 --
--- Indexes for table `sales`
+-- Indices de la tabla `sales`
 --
 ALTER TABLE `sales`
   ADD PRIMARY KEY (`id_sales`),
   ADD KEY `customer` (`customer`);
 
 --
--- Indexes for table `team_member`
+-- Indices de la tabla `team_member`
 --
 ALTER TABLE `team_member`
   ADD PRIMARY KEY (`id_team_member`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT de las tablas volcadas
 --
 
 --
--- AUTO_INCREMENT for table `admin`
+-- AUTO_INCREMENT de la tabla `admin`
 --
 ALTER TABLE `admin`
   MODIFY `id_admin` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `bill`
+-- AUTO_INCREMENT de la tabla `bill`
 --
 ALTER TABLE `bill`
   MODIFY `id_bill` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `customers`
+-- AUTO_INCREMENT de la tabla `customers`
 --
 ALTER TABLE `customers`
   MODIFY `id_customers` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT for table `payment_waiter`
+-- AUTO_INCREMENT de la tabla `payment_waiter`
 --
 ALTER TABLE `payment_waiter`
-  MODIFY `id_payment_waiter` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id_payment_waiter` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=116;
 
 --
--- AUTO_INCREMENT for table `purchased_events`
+-- AUTO_INCREMENT de la tabla `purchased_events`
 --
 ALTER TABLE `purchased_events`
   MODIFY `id_purchased_events` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 
 --
--- AUTO_INCREMENT for table `sales`
+-- AUTO_INCREMENT de la tabla `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id_sales` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=39;
+  MODIFY `id_sales` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
 
 --
--- AUTO_INCREMENT for table `team_member`
+-- AUTO_INCREMENT de la tabla `team_member`
 --
 ALTER TABLE `team_member`
-  MODIFY `id_team_member` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=86;
+  MODIFY `id_team_member` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=90;
 
 --
--- Constraints for dumped tables
+-- Restricciones para tablas volcadas
 --
 
 --
--- Constraints for table `bill`
+-- Filtros para la tabla `bill`
 --
 ALTER TABLE `bill`
   ADD CONSTRAINT `bill_ibfk_1` FOREIGN KEY (`user_admin`) REFERENCES `admin` (`id_admin`);
 
 --
--- Constraints for table `payment_waiter`
+-- Filtros para la tabla `payment_waiter`
 --
 ALTER TABLE `payment_waiter`
   ADD CONSTRAINT `payment_waiter_ibfk_1` FOREIGN KEY (`event`) REFERENCES `sales` (`id_sales`);
 
 --
--- Constraints for table `purchased_events`
+-- Filtros para la tabla `purchased_events`
 --
 ALTER TABLE `purchased_events`
   ADD CONSTRAINT `purchased_events_ibfk_1` FOREIGN KEY (`team_member`) REFERENCES `team_member` (`id_team_member`);
 
 --
--- Constraints for table `sales`
+-- Filtros para la tabla `sales`
 --
 ALTER TABLE `sales`
   ADD CONSTRAINT `sales_ibfk_1` FOREIGN KEY (`customer`) REFERENCES `customers` (`id_customers`);

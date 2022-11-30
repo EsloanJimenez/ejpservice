@@ -4,6 +4,7 @@
 <head>
    <meta charset="utf-8">
    <title>Ventas</title>
+   <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=3, minimum-scale=1">
    <link rel="shortcut icon" href="../img/icon/favicon.png">
 
    <link rel="stylesheet" href="../css/main.css">

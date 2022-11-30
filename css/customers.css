@@ -31,13 +31,6 @@
    background-color: rgb(166, 166, 166);
    border-radius: 0 0 20px 20px;
 }
-table .cuerpo {
-   transition: all ease-in .3s;
-}
-table .cuerpo:hover {
-   box-shadow: 0 0 5px #000;
-   border-radius: 10px;
-}
 .customer_list table tr td {
    padding: 0 20px;
 }
