@@ -204,7 +204,7 @@
                               <a href="delete_purchased_events.php?id=<?php echo $miembro_equipo->id_purchased_events ?>"><i class="btn_delete fa-solid fa-user-minus" name="eliminar"></i></a>
 
                               <!-- BOTON DE ACTUALIZAR -->
-                              <a href="update_purchased_events.php?id_pur_eve=<?php echo $miembro_equipo->id_purchased_events ?> & te_mem=<?php echo $miembro_equipo->team_member ?> & dat=<?php echo $miembro_equipo->date ?> & sta=<?php echo $miembro_equipo->status ?> "><i class="btn_update fa-solid fa-user-gear" name="actualizar"></i></a>
+                              <a href="update_purchased_events.php?id_pur_eve=<?php echo $miembro_equipo->id_purchased_events ?> & te_mem=<?php echo $miembro_equipo->team_member ?> & dat=<?php echo $miembro_equipo->date ?> & tim=<?php echo $miembro_equipo->time ?> & sta=<?php echo $miembro_equipo->status ?> "><i class="btn_update fa-solid fa-user-gear" name="actualizar"></i></a>
                            </td>
                            <td class="separador">-----------------------------------------</td>
                         </tr>

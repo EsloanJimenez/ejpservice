@@ -42,6 +42,7 @@
          $nom_ban = $_GET['nom_ban'];
          $ti_ban = $_GET['ti_ban'];
          $num_cue = $_GET['num_cue'];
+         $sta = $_GET['sta'];
       } else {
          $id = $_POST['id'];
          $nom = $_POST['nom'];
@@ -52,11 +53,12 @@
          $nom_ban = $_POST['nom_ban'];
          $ti_ban = $_POST['ti_ban'];
          $num_cue = $_POST['num_cue'];
+         $sta = $_POST['sta'];
 
-         $consulta = "UPDATE team_member SET name = :miNom, identification_card = :miCed, sex = :miSexo, cell_phone = :miCel, cluster = :miGrup, bank_name = :miNomBan, bank_account_type = :miTipBan, account_number = :miNumBan  WHERE id_team_member = :miId";
+         $consulta = "UPDATE team_member SET name = :miNom, identification_card = :miCed, sex = :miSexo, cell_phone = :miCel, cluster = :miGrup, bank_name = :miNomBan, bank_account_type = :miTipBan, account_number = :miNumBan, status = :miStatus  WHERE id_team_member = :miId";
 
          $resultado = $conexion->prepare($consulta);
-         $resultado->execute(array(":miId"=>$id, ":miNom"=>$nom, ":miCed"=>$ced, ":miSexo"=>$sex, ":miCel"=>$cel, ":miGrup"=>$gru, ":miNomBan"=>$nom_ban, ":miTipBan"=>$ti_ban, ":miNumBan"=>$num_cue));
+         $resultado->execute(array(":miId"=>$id, ":miNom"=>$nom, ":miCed"=>$ced, ":miSexo"=>$sex, ":miCel"=>$cel, ":miGrup"=>$gru, ":miNomBan"=>$nom_ban, ":miTipBan"=>$ti_ban, ":miNumBan"=>$num_cue, ":miStatus"=>$sta));
 
             header ("Location:register_team_member.php");
          }
@@ -97,6 +99,7 @@
                      <th>NOMBRE BANCO</th>
                      <th>TIPO DE CUENTA</th>
                      <th>NUMERO DE CUENTA</th>
+                     <th>STATUS</th>
                   </thead>
                   <tbody>
                      <tr>
@@ -150,6 +153,15 @@
                            </div>
                         </td>
                         <td><label for="num_cue"></label><input type="text" name="num_cue" id="num_cue" value="<?php echo $num_cue ?>"></td>
+                        <td>
+                           <div class="select">
+                              <select id="sta" name="sta">
+                                 <option><?php echo $sta ?></option>
+                                 <option>Activo</option>
+                                 <option>Inactivo</option>
+                              </select>
+                           </div>
+                        </td>
                         <td colspan="2"><input type="submit" name="actualizar" class="btn_update" value="Actualizar"></td>
                      </tr>
                   </tbody>

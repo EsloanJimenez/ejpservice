@@ -7,7 +7,18 @@
     top: 5px;
  }
 #cabezera th {
-   font-size: 16px;
+   font-size: 14px;
+}
+.customer_list tr td {
+   font-size: 12px;
+}
+.activo {
+   color: rgb(0, 111, 0);
+   font-weight: bold;
+}
+.inactivo {
+   color: rgb(200, 0, 0);
+   font-weight: bold;
 }
  .customer_list table tr td img {
     width: 100px;

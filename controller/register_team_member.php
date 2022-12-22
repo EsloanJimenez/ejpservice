@@ -65,6 +65,7 @@
          $bank_name = $_POST['bank_name'];
          $bank_account_type = $_POST['bank_account_type'];
          $account_number = $_POST['account_number'];
+         $status = $_POST['status'];
 
          //CODIGO PARA MOSTRAR LA FOTO (POR SI MAS ADELANTE QUIERO AGREGARLA)
 
@@ -170,6 +171,17 @@
                      <tr>
                         <td><input type="text" id="account_number" name="account_number" placeholder="Numero De Cuenta"></td>
                      </tr>
+                     <tr>
+                        <td>
+                           <div class="select">
+                              <select id="status" name="status">
+                                 <option>Activo</option>
+                                 <option>Inactivo</option>
+                              </select>
+                           </div>
+                        </td>
+                     </tr>
+                     <tr>
                         <td colspan="2" style="text-align: center" class="btn_registrar"><input type="submit" name="insertar" value="Registrar"></td>
                      </tr>
                   </table>
@@ -224,6 +236,7 @@
                   <th>NOMBRE DE BANCO</th>
                   <th>TIPO DE CUENTA</th>
                   <th>NUMERO DE CUENTA</th>
+                  <th>STATUS</th>
                </tr>
                <?php foreach ($registrar as $miembro_equipo): ?>
                   <tr>
@@ -237,13 +250,21 @@
                      <td><?php echo $miembro_equipo->bank_name ?></td>
                      <td><?php echo $miembro_equipo->bank_account_type ?></td>
                      <td><?php echo $miembro_equipo->account_number ?></td>
-
+                     <td>
+                        <?php
+                           if ($miembro_equipo->status == "Activo") {
+                              echo "<div class='activo'>$miembro_equipo->status</div>";
+                           } else {
+                              echo "<div class='inactivo'>$miembro_equipo->status</div>";
+                           }
+                        ?>
+                     </td>
                      <td>
                         <!-- boton de eliminar -->
                         <a href="delete_team_member.php?id=<?php echo $miembro_equipo->id_team_member ?>"><i class="btn_delete fa-solid fa-user-minus" name="eliminar"></i></a>
 
                         <!-- BOTON DE ACTUALIZAR -->
-                        <a href="update_team_member.php?id=<?php echo $miembro_equipo->id_team_member ?> & nom=<?php echo $miembro_equipo->name ?> & photo=<?php echo $miembro_equipo->photo ?> & ced=<?php echo $miembro_equipo->identification_card ?> & cel=<?php echo $miembro_equipo->cell_phone ?> & sex=<?php echo $miembro_equipo->sex ?> & gru=<?php echo $miembro_equipo->cluster ?> & nom_ban=<?php echo $miembro_equipo->bank_name ?> & ti_ban=<?php echo $miembro_equipo->bank_account_type ?> & num_cue=<?php echo $miembro_equipo->account_number ?>"><i class="btn_update fa-solid fa-user-gear" name="actualizar"></i></a>
+                        <a href="update_team_member.php?id=<?php echo $miembro_equipo->id_team_member ?> & nom=<?php echo $miembro_equipo->name ?> & photo=<?php echo $miembro_equipo->photo ?> & ced=<?php echo $miembro_equipo->identification_card ?> & cel=<?php echo $miembro_equipo->cell_phone ?> & sex=<?php echo $miembro_equipo->sex ?> & gru=<?php echo $miembro_equipo->cluster ?> & nom_ban=<?php echo $miembro_equipo->bank_name ?> & ti_ban=<?php echo $miembro_equipo->bank_account_type ?> & num_cue=<?php echo $miembro_equipo->account_number ?> & sta=<?php echo $miembro_equipo->status ?>"><i class="btn_update fa-solid fa-user-gear" name="actualizar"></i></a>
                      </td>
                      <td class="separador">-----------------------------------------</td>
                   </tr>

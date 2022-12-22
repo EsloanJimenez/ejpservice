@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 11-12-2022 a las 21:41:26
+-- Tiempo de generación: 18-12-2022 a las 14:14:36
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 8.1.10
 
@@ -98,7 +98,8 @@ INSERT INTO `customers` (`id_customers`, `name`, `company`, `email`, `cell_phone
 (5, 'Yaniris Perez', 'Events Planner', 'eventsplannerdr@gmail.com', '8094402605'),
 (6, 'Ana Ramirez', 'Playa Palmera', '', '8092658251'),
 (7, 'Jose Miguel', '', '', '8099669805'),
-(8, 'probando', 'si no se borra', '', '54');
+(8, 'probando', 'si no se borra', '', '54'),
+(9, 'Guillermo', '', '', '8292070795');
 
 -- --------------------------------------------------------
 
@@ -228,18 +229,37 @@ INSERT INTO `payment_waiter` (`id_payment_waiter`, `name`, `date`, `event`, `pay
 (109, 'Luisa Mateo', '2022-11-29 12:00:00', 38, 1000, 'Pagado'),
 (110, 'Luisa Mateo', '2022-11-30 12:00:00', 39, 1000, 'Pagado'),
 (111, 'Luisa Mateo', '2022-12-01 12:00:00', 40, 1000, 'Pagado'),
-(112, 'Esloan Jimenez', '2022-12-09 09:00:00', 41, 5000, 'Por Pagar'),
+(112, 'Esloan Jimenez', '2022-12-09 09:00:00', 41, 5000, 'Pagado'),
 (113, 'Tomas Encarnacion', '2022-12-09 09:00:00', 41, 4000, 'Pagado'),
 (114, 'Transporte', '2022-12-09 09:00:00', 41, 2500, 'Pagado'),
-(115, 'Marcos Nuñez', '2022-12-09 09:00:00', 41, 3000, 'Pagado'),
-(116, 'Luisa Mateo', '2022-12-05 12:00:00', 42, 1000, 'Por Pagar'),
-(117, 'Esloan Jimenez', '2022-12-13 10:00:00', 46, 2500, 'Por Pagar'),
-(118, 'Tomas Encarnacion', '2022-12-13 12:00:00', 46, 2500, 'Por Pagar'),
-(119, 'Yhennifer Abreu', '2022-12-13 12:00:00', 46, 1800, 'Por Pagar'),
-(120, 'Leiky Piña', '2022-12-13 12:00:00', 46, 1800, 'Por Pagar'),
-(121, 'Luisa Mateo', '2022-12-06 12:00:00', 43, 1000, 'Por Pagar'),
-(122, 'Keifry Sanchez', '2022-12-14 12:00:00', 46, 1800, 'Por Pagar'),
-(123, 'Luisa Mateo', '2022-12-12 07:00:00', 47, 1000, 'Por Pagar');
+(115, 'Juan Aristides', '2022-12-09 09:00:00', 41, 3000, 'Pagado'),
+(116, 'Luisa Mateo', '2022-12-05 12:00:00', 42, 1000, 'Pagado'),
+(117, 'Esloan Jimenez', '2022-12-13 10:00:00', 46, 2500, 'Pagado'),
+(118, 'Tomas Encarnacion', '2022-12-13 12:00:00', 46, 2500, 'Pagado'),
+(119, 'Yhennifer Abreu', '2022-12-13 12:00:00', 46, 1800, 'Pagado'),
+(120, 'Juan Aristides', '2022-12-13 12:00:00', 46, 1800, 'Pagado'),
+(121, 'Luisa Mateo', '2022-12-06 12:00:00', 43, 500, 'Pagado'),
+(122, 'Enmanuel Alcántara', '2022-12-14 12:00:00', 46, 1800, 'Pagado'),
+(123, 'Luisa Mateo', '2022-12-12 07:00:00', 47, 1000, 'Pagado'),
+(124, 'Luisa Mateo', '2022-12-13 07:00:00', 48, 1000, 'Pagado'),
+(125, 'Elizabeth Reyes', '2022-12-16 10:00:00', 49, 1300, 'Pagado'),
+(126, 'Fior Daliza', '2022-12-16 10:00:00', 49, 1200, 'Por Pagar'),
+(127, 'Sarha Santana', '2022-12-16 10:00:00', 49, 1200, 'Pagado'),
+(128, 'Tomas Encarnacion', '2022-12-16 10:00:00', 49, 1200, 'Por Pagar'),
+(129, 'Tomas Encarnacion', '2022-12-16 10:00:00', 49, 1500, 'Pagado'),
+(130, 'Tomas Encarnacion', '2022-12-16 10:00:00', 49, 1500, 'Pagado'),
+(131, 'Yhennifer Abreu', '2022-12-16 09:00:00', 50, 2400, 'Por Pagar'),
+(132, 'Juan Aristides', '2022-12-17 09:00:00', 50, 1800, 'Pagado'),
+(133, 'Robert Reyes', '2022-12-17 09:00:00', 50, 1800, 'Pagado'),
+(134, 'Luis Guzman', '2022-12-17 09:00:00', 50, 1800, 'Pagado'),
+(135, 'Tomas Moreno', '2022-12-17 09:00:00', 50, 1800, 'Pagado'),
+(136, 'Enmanuel Alcántara', '2022-12-17 09:00:00', 50, 1800, 'Pagado'),
+(137, 'Rochell Ramírez', '2022-12-17 09:00:00', 50, 1800, 'Pagado'),
+(138, 'Tomas Encarnacion', '2022-12-18 10:00:00', 51, 1500, 'Por Pagar'),
+(139, 'Yhennifer Abreu', '2022-12-18 10:00:00', 51, 1500, 'Por Pagar'),
+(140, 'Luisa Mateo', '2022-12-18 10:00:00', 51, 1300, 'Por Pagar'),
+(141, 'Keifry Sanchez', '2022-12-18 10:00:00', 51, 1300, 'Por Pagar'),
+(142, 'Elizabeth Reyes', '2022-12-18 10:00:00', 51, 1300, 'Por Pagar');
 
 -- --------------------------------------------------------
 
@@ -288,10 +308,10 @@ INSERT INTO `purchased_events` (`id_purchased_events`, `team_member`, `date`, `t
 (26, 38, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Pagado'),
 (27, 30, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Pagado'),
 (28, 87, '2022-11-30', '15:00:00', 'Embassy Suite', 1350, 1200, 'Pagado'),
-(30, 6, '2022-11-29', '17:00:00', 'Embassy Suite', 1350, 1500, 'Pagado'),
-(31, 12, '2022-11-29', '17:00:00', 'Embassy Suite', 1350, 1500, 'Pagado'),
-(32, 11, '2022-12-03', '09:00:00', 'Embassy Suite', 1350, 1500, 'Pagado'),
-(33, 87, '2022-12-02', '15:00:00', 'JW Marriot', 1800, 1600, 'Por Pagar'),
+(30, 6, '2022-11-29', '17:00:00', 'Embassy Suite', 1350, 1200, 'Pagado'),
+(31, 12, '2022-11-29', '17:00:00', 'Embassy Suite', 1350, 1200, 'Pagado'),
+(32, 11, '2022-12-03', '09:00:00', 'Embassy Suite', 1700, 1500, 'Por Pagar'),
+(33, 87, '2022-12-02', '15:00:00', 'JW Marriot', 1800, 1600, 'Pagado'),
 (34, 30, '2022-12-06', '15:00:00', 'Embassy Suite', 1700, 1500, 'Por Pagar'),
 (35, 33, '2022-12-06', '15:00:00', 'Embassy Suite', 1700, 1500, 'Por Pagar'),
 (36, 85, '2022-12-06', '15:00:00', 'Embassy Suite', 1700, 1500, 'Por Pagar'),
@@ -312,7 +332,10 @@ INSERT INTO `purchased_events` (`id_purchased_events`, `team_member`, `date`, `t
 (51, 33, '2022-12-09', '09:00:00', 'Embassy Suite', 1700, 1500, 'Por Pagar'),
 (52, 95, '2022-12-09', '09:00:00', 'Embassy Suite', 1700, 1500, 'Por Pagar'),
 (53, 64, '2022-12-09', '17:00:00', 'Embassy Suite', 1700, 1400, 'Por Pagar'),
-(54, 64, '2022-12-10', '07:00:00', 'Embassy Suite', 1700, 1500, 'Por Pagar');
+(54, 64, '2022-12-10', '07:00:00', 'Embassy Suite', 1700, 1400, 'Por Pagar'),
+(55, 30, '2022-12-13', '17:00:00', 'Embassy Suite', 1700, 1500, 'Por Pagar'),
+(56, 12, '2022-12-13', '17:00:00', 'Embassy Suite', 1700, 1500, 'Por Pagar'),
+(57, 64, '2022-12-11', '09:00:00', 'Embassy Suite', 1700, 1400, 'Por Pagar');
 
 -- --------------------------------------------------------
 
@@ -377,8 +400,12 @@ INSERT INTO `sales` (`id_sales`, `description`, `customer`, `date`, `time`, `amo
 (41, 'Bartender Fiesta Navideña Santiago', 5, '2022-12-09', '09:00:00', 4, 4000, '1 Capitan de Bares y 2 Bartender para Santiago'),
 (42, 'Cafeteria Lunes 12PM', 2, '2022-12-05', '12:00:00', 1, 1200, ''),
 (43, 'Cafeteria Martes 12PM', 2, '2022-12-06', '12:00:00', 1, 1200, ''),
-(46, 'Fiesta Navideña  14/12 ', 3, '2022-12-14', '12:00:00', 5, 2500, '5 Camareros, al finalizar ponerle el precio al evento'),
-(47, 'Cafeteria Lunes 7 AM', 2, '2022-12-12', '07:00:00', 1, 1200, '');
+(46, 'Fiesta Navideña  13/12  ', 3, '2022-12-13', '12:00:00', 5, 2500, '5 Camareros, al finalizar ponerle el precio al evento'),
+(47, 'Cafeteria Lunes 7 AM', 2, '2022-12-12', '07:00:00', 1, 1200, ''),
+(48, 'Cafeteria Martes 7AM', 2, '2022-12-13', '07:00:00', 1, 1200, ''),
+(49, 'Almuerzo George', 2, '2022-12-16', '10:00:00', 6, 1500, ''),
+(50, 'Club Banco Central', 9, '2022-12-17', '09:00:00', 7, 2000, ''),
+(51, 'Autodromo', 2, '2022-12-18', '10:00:00', 5, 1500, '');
 
 -- --------------------------------------------------------
 
@@ -412,16 +439,16 @@ INSERT INTO `team_member` (`id_team_member`, `photo`, `name`, `identification_ca
 (6, 0x417269736c656964794d6f7264616e2e6a706567, 'Arisleidy Mordan', '013-0053738-6', 'Femenina', '8293613198', 'Grupo B', 'Banreservas', 'Ahorro', '3470013152'),
 (7, 0x436c6172697a6120476f6e7a616c657a2e6a706567, 'Clariza Gonzalez ', '001-1945166-4', 'Femenina', '8093184592 ', 'Grupo B', 'Banreservas', 'Ahorro', '9605254895'),
 (8, 0x46696f7244616c697a612e6a706567, 'Fior Daliza', '402-2789327-4', 'Femenina', '8292086411', 'Grupo C', 'No Tiene', 'No Tiene', ''),
-(9, 0x4c697a62657468476f6e7a616c65732e706e67, 'Lizbeth Gonzales ', '402-1359052-0', 'Femenina', '8297990066 ', 'Grupo C', 'BHD Leon', 'Ahorro', '30990770018'),
+(9, 0x4c697a62657468476f6e7a616c65732e706e67, 'Lizbeth Gonzales  ', '402-1359052-0', 'Femenina', '8297990066 ', 'Grupo B', 'BHD Leon', 'Ahorro', '30990770018'),
 (10, 0x4a65686f76616e6e69614d656a69612e706e67, 'Jehovannia Mejia', '225-0084396-0', 'Masculino', '8496530633', 'Grupo B', 'Banreservas', 'Ahorro', '9605031884'),
-(11, 0x416d62617252697661732e6a706567, 'Ambar Rivas', '402-1428966-9', 'Femenina', '8292040233', 'Grupo D', 'No Tiene', 'No Tiene', ''),
+(11, 0x416d62617252697661732e6a706567, 'Ambar Rivas ', '402-1428966-9', 'Femenina', '8292040233 ', 'Grupo C', 'No Tiene', 'No Tiene', ''),
 (12, 0x596f736d6569727920477565727265726f2e6a706567, 'Yosmeiry Guerrero', '402-3351638-0', 'Femenina', '8298700320', 'Grupo B', 'No Tiene', 'No Tiene', ''),
 (13, 0x48656e6c6c7954656a6564612e6a706567, 'Henlly Tejeda ', '402-3282809-1', 'Masculino', '8493142453 ', 'Arroye', 'No Tiene', 'No Tiene', ''),
 (14, 0x456d6d616e75656c416c63616e746172612e6a706567, 'Enmanuel Alcántara', '225-0048873-3', 'Masculino', '8298477468', 'Grupo B', 'No Tiene', 'No Tiene', ''),
 (15, 0x416e746f6e7952616d697265732e6a7067, 'Antony Ramires', '402-3580863-7', 'Masculino', '8298615757', 'Grupo A', 'No Tiene', 'No Tiene', ''),
 (16, 0x417267656e69734c6562726f6d2e6a706567, 'Argenis Lebrom', '402-2666263-9', 'Masculino', '8299644352', 'Grupo B', 'BHD Leon', 'Ahorro', '27825460017'),
 (17, 0x4b656e6e6564795269766572612e6a706567, 'Kennedi Rivera', '402-2611475-5', 'Masculino', '8297862787', 'Grupo B', 'No Tiene', 'No Tiene', ''),
-(18, 0x6761627269656c206465206c6f732073616e746f2e6a7067, 'Gabriel Jimenez ', '402-1567254-0', 'Masculino', '8493513629 ', 'Grupo C', 'Banreservas', 'Ahorro', '9605273777'),
+(18, 0x6761627269656c206465206c6f732073616e746f2e6a7067, 'Gabriel Jimenez  ', '402-1567254-0', 'Masculino', '8493513629 ', 'Grupo B', 'Banreservas', 'Ahorro', '9605273777'),
 (19, 0x6f6e696c2e6a7067, 'Onil Cuevas', '402-3429260-1', 'Masculino', '8299188395', 'Grupo D', 'No Tiene', 'No Tiene', ''),
 (20, 0x6f6c69766172652e6a7067, 'Alejandro Olivare', '225-0042704-6', 'Masculino', '8097685894', 'Grupo A', 'No Tiene', 'No Tiene', ''),
 (21, 0x4a75616e4172697374696465732e6a7067, 'Juan Aristides', '059-0020553-4', 'Masculino', '8297630888', 'Grupo A', 'No Tiene', 'No Tiene', ''),
@@ -442,13 +469,13 @@ INSERT INTO `team_member` (`id_team_member`, `photo`, `name`, `identification_ca
 (36, 0x536f6d6d6572526f736172696f2e6a706567, 'Sommer Rosario', '402-4194198-4', 'Femenina', '8098041407', 'Grupo C', 'Banreservas', 'Ahorro', '9604695224'),
 (37, 0x4e6174686163686120486572726572612e6a706567, 'Nathacha Herrera', '402-3441394-2', 'Femenina', '8297812236', 'Grupo B', 'Banreservas', 'Ahorro', '63800023250'),
 (38, 0x457374686572506572657a2e6a706567, 'Esther Perez', '402-2871056-8', 'Femenina', '8292038124', 'Grupo C', 'Banreservas', 'Ahorro', '90604376909'),
-(39, 0x48616c616e6e61466572726572612e6a706567, 'Halanna Ferrera', '402-3197584-4', 'Femenina', '8295099281', 'Grupo B', 'Banreservas', 'Ahorro', '9603270187'),
+(39, 0x48616c616e6e61466572726572612e6a706567, 'Halanna Ferrera ', '402-3197584-4', 'Femenina', '8295099281 ', 'Grupo C', 'Banreservas', 'Ahorro', '9603270187'),
 (40, 0x506564726f46656c697a2e6a706567, 'Pedro Feliz', '001-1146567-0', 'Masculino', '8299866161', 'Grupo B', 'Popular', 'Ahorro', '9603843022'),
 (41, 0x59756c69616e2047757a6d616e2e706e67, 'Yulian Guzman', '225-0070222-4', 'Masculino', '8298363353', 'Grupo A', 'No Tiene', 'No Tiene', ''),
 (42, 0x4d617269616e6e79204d6f6e7465726f2e6a706567, 'Marianny Montero ', '402-4337378-0', 'Femenina', '8294321059', 'Grupo B', 'Banreservas', 'Ahorro', '9604695198'),
 (43, 0x4a65616e204475617274652e6a706567, 'Jean Duarte', '229-0025552-6', 'Masculino', '8094087304', 'Grupo A', 'No Tiene', 'No Tiene', ''),
-(44, 0x726f626572742072657965732e6a706567, 'Robert Reyes', '402-0044334-5', 'Masculino', '8294048171', 'Grupo B', 'No Tiene', 'No Tiene', ''),
-(45, 0x4e656c736f6e20426561746f2e6a706567, 'Nelson Beato ', '001-1353019-0', 'Masculino', '8497519572', 'Grupo B', 'No Tiene', 'No Tiene', ''),
+(44, 0x726f626572742072657965732e6a706567, 'Robert Reyes ', '402-0044334-5', 'Masculino', '8294048171 ', 'Arroye', 'No Tiene', 'No Tiene', ''),
+(45, 0x4e656c736f6e20426561746f2e6a706567, 'Nelson Valdez Padilla', '402-2979096-5', 'Masculino', '8497519572 ', 'Arroye', 'BHD Leon', 'Ahorro', '32332020016'),
 (46, 0x596f6a616e73656c2e6a706567, 'Yojanzel Tejada', '402-2201848-9', 'Masculino', '8296773910', 'Grupo A', 'BHD Leon', 'Ahorro', '20321770037 '),
 (47, 0x4469666f2e706e67, 'Difo De La Cruz', '223-0136441-4', 'Masculino', '8094178182', 'Grupo A', 'Popular', 'Ahorro', '80313697'),
 (48, 0x6a75646572737920626174697374612e6a706567, 'Judersy Batista', '402-0048928-0', 'Femenina', '8297443350', 'Grupo C', 'Banreservas', 'Ahorro', '9603043039'),
@@ -460,21 +487,21 @@ INSERT INTO `team_member` (`id_team_member`, `photo`, `name`, `identification_ca
 (55, 0x427279616e2074696d6f6e69656c2072616d697265732e6a706567, 'Brayan Ramirez', '402-1868514-3', 'Masculino', '8494721403', 'Grupo C', 'No Tiene', 'No Tiene', ''),
 (56, 0x4672616e73697320436f6e74726572612e6a706567, 'Fransis Contrera', '225-0068860-5', 'Masculino', '8293546782', 'Grupo A', 'No Tiene', 'No Tiene', ''),
 (57, 0x4372697374696e612052697661732e6a706567, 'Cristina Rivas ', '001-1533805-5', 'Femenina', '8494324560 ', 'Arroye', 'Banreservas', 'Ahorro', '230440877'),
-(58, 0x4c75697361204d6174656f2e6a706567, 'Luisa Mateo', '107-0001424-3', 'Femenina', '8097060404', 'Arroye', 'Popular', 'Corriente', '820212025'),
+(58, 0x4c75697361204d6174656f2e6a706567, 'Luisa Mateo ', '107-0001424-3', 'Femenina', '8097060404 ', 'Grupo D', 'Popular', 'Corriente', '820212025'),
 (59, 0x4e69636f6c204375657661732e6a706567, 'Nicol Cuevas', '402-0979408-6', 'Femenina', '8298652087', 'Arroye', 'Banreservas', 'Ahorro', '9603389217'),
 (60, 0x53637265656e73686f7420323032322d31312d3131203132303132382e706e67, 'Onel Santana', '027-0043965-2', 'Masculino', '8298152347', 'Grupo B', 'No Tiene', 'No Tiene', ''),
-(61, 0x6361726f6c696e654f7a756e612e706e67, 'Caroline Ozuna', '402-1275515-7', 'Femenina', '8293038212', 'Grupo D', 'Popular', 'Ahorro', '830559589'),
-(62, 0x53637265656e73686f7420323032322d31312d3131203131353132312e706e67, 'Roder Ortega', '000-0000000-0', 'Masculino', '8296414378', 'Grupo C', 'No Tiene', 'No Tiene', ''),
+(61, 0x6361726f6c696e654f7a756e612e706e67, 'Caroline Ozuna ', '402-1275515-7', 'Femenina', '8293038212 ', 'Grupo C', 'Popular', 'Ahorro', '830559589'),
+(62, 0x53637265656e73686f7420323032322d31312d3131203131353132312e706e67, 'Roder Ortega ', '000-0000000-0', 'Masculino', '8296414378 ', 'Grupo B', 'No Tiene', 'No Tiene', ''),
 (64, 0x526f7361416e67656c69732e6a706567, 'Rosa Marte ', '402-3156096-8', 'Femenina', '8495692826 ', 'Grupo C', 'Banreservas', 'Ahorro', '9604492502'),
 (65, 0x4c61757261427265746f6e2e706e67, 'Laura Breton', '402-3957017-5', 'Femenina', '8098429766', 'Grupo C', 'No Tiene', 'No Tiene', ''),
 (66, 0x4a61637175656c696e65426572726f612e6a706567, 'Jacqueline Berroa', '225-0043380-4', 'Femenina', '8496200197', 'Grupo C', 'No Tiene', 'No Tiene', ''),
 (67, 0x4361726c6f7354656a6564612e706e67, 'Carlos Tejeda', '224-0022925-2', 'Masculino', '8492692772', 'Grupo B', 'No Tiene', 'No Tiene', ''),
-(68, 0x47656e6573697320426572726f612e706e67, 'Genesis Berroa ', '225-0084230-1', 'Femenina', '8492847915 ', 'Grupo B', 'BHD Leon', 'Ahorro', '30048660011'),
+(68, 0x47656e6573697320426572726f612e706e67, 'Genesis Berroa   ', '225-0084230-1', 'Femenina', '8492847915 ', 'Arroye', 'BHD Leon', 'Ahorro', '30048660011'),
 (69, 0x416e65756672616e6943617374726f2e6a706567, 'Aneufrani Castro', '402-1899676-3', 'Masculino', '8296896078', 'Grupo A', 'No Tiene', 'No Tiene', ''),
 (70, 0x4b656e6961456e6361726e6163696f6e2e6a706567, 'Kenia Encarnacion', '001-1732772-6', 'Femenina', '8099951775', 'Grupo C', 'No Tiene', 'No Tiene', ''),
 (71, 0x4a6f7365506572657a2e706e67, 'Jose Perez', '402-1080604-4', 'Masculino', '8292842855', 'Grupo B', 'No Tiene', 'No Tiene', ''),
 (72, 0x4a6f73656c696e537565726f2e706e67, 'Joselin Suero', '016-0020622-9', 'Masculino', '8298909503', 'Grupo D', 'No Tiene', 'No Tiene', ''),
-(73, 0x536172686153616e74616e612e6a706567, 'Sarha Santana', '223-0176386-2', 'Femenina', '8099492931', 'Grupo C', 'No Tiene', 'No Tiene', ''),
+(73, 0x536172686153616e74616e612e6a706567, 'Sarha Santana ', '223-0176386-2', 'Femenina', '8099492931 ', 'Grupo C', 'Banreservas', 'Ahorro', '9603133349'),
 (74, 0x4e617468616c79204d6f74612e6a706567, 'Nathaly Mota', '001-1843982-7', 'Femenina', '8093861091', 'Grupo C', 'Banreservas', 'Ahorro', '9603431283'),
 (75, 0x4a6f636b65696469536f73612e706e67, 'Jockeidi Sosa ', '073-0018152-1', 'Masculino', '8093090907', 'Grupo C', 'No Tiene', 'No Tiene', ''),
 (76, 0x456c736120526f736172696f2e6a706567, 'Elsa Rosario', '224-0053977-5', 'Femenina', '8094027708', 'Grupo B', 'No Tiene', 'No Tiene', ''),
@@ -488,10 +515,10 @@ INSERT INTO `team_member` (`id_team_member`, `photo`, `name`, `identification_ca
 (84, 0x59617269747a6120526f736172696f2e6a706567, 'Yaritza Rosario', '402-4061682-7', 'Femenina', '8298189599', 'Grupo C', 'No Tiene', 'No Tiene', ''),
 (85, 0x4761627269656c6120526f6d616e2e6a706567, 'Gabriela Roman', '402-4807282-5', 'Femenina', '8296967898', 'Grupo C', 'No Tiene', 'No Tiene', ''),
 (86, 0x456c656e612050696e6564612e6a706567, 'Elena Pineda', '402-2029927-1', 'Femenina', '8293797407', 'Grupo C', 'No Tiene', 'No Tiene', ''),
-(87, 0x4461797361204d61737369656c20437565746f2e6a706567, 'Daysa Massiel Cueto', '22500641067', 'Femenina', '8092304803', 'Grupo C', 'No Tiene', 'No Tiene', ''),
+(87, 0x4461797361204d61737369656c20437565746f2e6a706567, 'Daysa Massiel Cueto ', '22500641067 ', 'Femenina', '8092304803 ', 'Arroye', 'No Tiene', 'No Tiene', ''),
 (88, 0x7472616e73706f7274652e706e67, 'Transporte', '', 'Masculino', '', 'Grupo A', 'No Tiene', 'No Tiene', ''),
 (89, 0x4d6172636f73204e75c3b1657a2e6a706567, 'Marcos Nuñez', '001-1792483-7', 'Masculino', '8094018595', 'Grupo A', 'No Tiene', 'No Tiene', ''),
-(90, 0x4d616775656c696e20417374776f6f642e6a7067, 'Magelin Astwood ', '402-2402882-5', 'Femenina', '8098506359 ', 'Grupo B', 'No Tiene', 'No Tiene', ''),
+(90, 0x4d616775656c696e20417374776f6f642e6a7067, 'Magelin Astwood  ', '402-2402882-5', 'Femenina', '8098506359 ', 'Arroye', 'No Tiene', 'No Tiene', ''),
 (91, 0x467265696c796e204d6f72696c6c6f2e706e67, 'Freilyn Morillo Reinoso', '402-4262071-0', 'Masculino', '8095029201', 'Arroye', 'No Tiene', 'No Tiene', ''),
 (92, 0x536d65726c796e204d6f72696c6c6f2e706e67, 'Smerlyn Morillo ', '402-1484664-0', 'Masculino', '8295595170 ', 'Grupo C', 'Banreservas', 'Ahorro', '9604463222'),
 (93, 0x4b6174686572696e65204f7a756e612e706e67, 'Katherine Ozuna', '402-3691583-7', 'Femenina', '8494471897', 'Grupo C', 'No Tiene', 'No Tiene', ''),
@@ -500,7 +527,11 @@ INSERT INTO `team_member` (`id_team_member`, `photo`, `name`, `identification_ca
 (96, 0x4e69636f6c204665727265722e6a7067, 'Nicol Ferrer', '402-1992528-2', 'Femenina', '8092289512', 'Grupo B', 'No Tiene', 'No Tiene', ''),
 (97, 0x4c756973204c6562726f6e2e6a7067, 'Luis Lebron', '012-0121665-0', 'Masculino', '8295662800', 'Grupo B', 'No Tiene', 'No Tiene', ''),
 (98, 0x596575726920416c6d6f6e74652e6a706567, 'Yeuri Almonte ', '223-0151250-9', 'Masculino', '8298771454 ', 'Grupo B', 'No Tiene', 'No Tiene', ''),
-(99, 0x4a6f68656c205069652e706e67, 'Johel Pie', '402-4212031-5', 'Masculino', '8096477491', 'Grupo C', 'No Tiene', 'No Tiene', '');
+(99, 0x4a6f68656c205069652e706e67, 'Johel Pie', '402-4212031-5', 'Masculino', '8096477491', 'Grupo C', 'No Tiene', 'No Tiene', ''),
+(100, 0x4f63617572792054656a6164612e6a7067, 'Ocaury Tejada', '402-2155449-2', 'Masculino', '8299217840', 'Grupo B', 'No Tiene', 'No Tiene', ''),
+(101, 0x4c7569732047757a6d616e2e706e67, 'Luis Guzman', '40222856797', 'Masculino', '8298146731', 'Grupo C', 'Banreservas', 'Ahorro', '9605021060'),
+(102, 0x546f6d6173204d6f72656e6f2e706e67, 'Tomas Moreno', '402-1554987-0', 'Masculino', '8298842915', 'Grupo C', 'Popular', 'Ahorro', '823737473'),
+(103, 0x526f6368656c6c2052616dc3ad72657a2e706e67, 'Rochell Ramírez', '402-2924996-2', 'Masculino', '8295266216', 'Grupo C', 'Banreservas', 'Ahorro', '9605162693');
 
 --
 -- Índices para tablas volcadas
@@ -572,31 +603,31 @@ ALTER TABLE `bill`
 -- AUTO_INCREMENT de la tabla `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `id_customers` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id_customers` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT de la tabla `payment_waiter`
 --
 ALTER TABLE `payment_waiter`
-  MODIFY `id_payment_waiter` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=124;
+  MODIFY `id_payment_waiter` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=143;
 
 --
 -- AUTO_INCREMENT de la tabla `purchased_events`
 --
 ALTER TABLE `purchased_events`
-  MODIFY `id_purchased_events` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
+  MODIFY `id_purchased_events` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=58;
 
 --
 -- AUTO_INCREMENT de la tabla `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id_sales` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+  MODIFY `id_sales` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=52;
 
 --
 -- AUTO_INCREMENT de la tabla `team_member`
 --
 ALTER TABLE `team_member`
-  MODIFY `id_team_member` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=100;
+  MODIFY `id_team_member` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=104;
 
 --
 -- Restricciones para tablas volcadas

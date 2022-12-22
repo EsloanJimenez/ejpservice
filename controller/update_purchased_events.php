@@ -32,17 +32,19 @@
          $id = $_GET['id_pur_eve'];
          $te_mem = $_GET['te_mem'];
          $dat = $_GET['dat'];
+         $tim = $_GET['tim'];
          $sta = $_GET['sta'];
       } else {
          $id = $_POST['id_pur_eve'];
          $te_mem = $_POST['te_mem'];
          $dat = $_POST['dat'];
+         $tim = $_POST['tim'];
          $sta = $_POST['sta'];
 
-         $consulta = "UPDATE purchased_events SET team_member = :miTeamMem, date = :miDate, status = :miStatus WHERE id_purchased_events = :miId";
+         $consulta = "UPDATE purchased_events SET team_member = :miTeamMem, date = :miDate, time = :miTime, status = :miStatus WHERE id_purchased_events = :miId";
 
          $resultado = $conexion->prepare($consulta);
-         $resultado->execute(array(":miId"=>$id, ":miTeamMem"=>$te_mem, ":miDate"=>$dat, ":miStatus"=>$sta));
+         $resultado->execute(array(":miId"=>$id, ":miTeamMem"=>$te_mem, ":miDate"=>$dat, ":miTime"=>$tim, ":miStatus"=>$sta));
 
          header ("Location:purchased_events.php");
       }
@@ -77,6 +79,7 @@
                         <th>ID</th>
                         <th>NOMBRE</th>
                         <th>FECHA</th>
+                        <th>TIME</th>
                         <th>STATUS</th>
                      </tr>
                   </thead>
@@ -85,6 +88,7 @@
                         <td><label for="id_pur_eve"></label><input name="id_pur_eve" id="id_pur_eve" value="<?php echo $id?>"></td>
                         <td><label for="te_mem"></label><input type="text" name="te_mem" id="te_mem" value="<?php echo $te_mem?>"></td>
                         <td><label for="dat"></label><input type="text" name="dat" id="dat" value="<?php echo $dat?>"></td>
+                        <td><label for="tim"></label><input type="text" name="tim" id="tim" value="<?php echo $tim?>"></td>
                         <td>
                            <div class="select">
                               <select id="sta" name="sta">
