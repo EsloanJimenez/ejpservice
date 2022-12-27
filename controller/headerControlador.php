@@ -30,6 +30,7 @@
          <li id="register_team_member"><a href="register_team_member.php" title="Registrar Miembro De Equipo"><i class="fa-solid fa-user-plus"></i><span>Registrar Miembro De Equipo</span></a></li>
          <li id="purchased_events"><a href="purchased_events.php" title="Eventos Comprados"><i class="fa-solid fa-cart-shopping"></i><span>Eventos Comprados</span></a></li>
          <li class="item"><a href="registrar_administrador.php" title="Registrar Administrador"><i class="fa-solid fa-address-card"></i><span>Registrar Administradores</span></a></li>
+         <li class="item"><a href="sign_off.php" title="Cerrar Seccion"><i class="fa-solid fa-right-from-bracket"></i><span>Cerrar Seccion</span></a></li>
       </ul>
    </div>
 </body>

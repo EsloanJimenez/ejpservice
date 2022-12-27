@@ -29,6 +29,11 @@
 
 <body>
    <?php
+      session_start();
+      if (!isset($_SESSION['usuario'])) {
+         header ("location:login.php");
+      }
+
       include 'conexion.php';
 
       // ------------- PAGINACION ----------------------
@@ -88,10 +93,10 @@
             echo "</p>El tamaño maximo de la imagen es: 5mb, escoja una imagen mas pequeña</p>";
          }
 
-         $consulta = "INSERT INTO team_member (name, photo, identification_card, cell_phone, sex, cluster, bank_name, bank_account_type, account_number) VALUES (:nam, :photo, :ide, :cel, :sex, :clu, :nam_ban, :ti_ban, :acc_num)";
+         $consulta = "INSERT INTO team_member (name, photo, identification_card, cell_phone, sex, cluster, bank_name, bank_account_type, account_number, status) VALUES (:nam, :photo, :ide, :cel, :sex, :clu, :nam_ban, :ti_ban, :acc_num, :sta)";
 
          $resultado = $conexion->prepare($consulta);
-         $resultado->execute(array(":nam"=>$name,":photo"=>$nam_photo, ":ide"=>$identification_card, ":cel"=>$cell_phone, ":sex"=>$sex, ":clu"=>$cluster, ":nam_ban"=>$bank_name, ":ti_ban"=>$bank_account_type, ":acc_num"=>$account_number));
+         $resultado->execute(array(":nam"=>$name,":photo"=>$nam_photo, ":ide"=>$identification_card, ":cel"=>$cell_phone, ":sex"=>$sex, ":clu"=>$cluster, ":nam_ban"=>$bank_name, ":ti_ban"=>$bank_account_type, ":acc_num"=>$account_number, ":sta"=>$status));
 
          header("Location:register_team_member.php");
       }
@@ -196,8 +201,25 @@
             <h1>Panel / Registrar Miembro De Equipo</h1>
 
             <div class="usuario">
-               <img src="../img/icon/login.png" alt="">
-               <h3>Nombre Usuario</h3>
+               <?php
+                  //echo "<h3>" . $_SESSION['usuario'] . "</h3>";
+                  if($_SESSION['usuario'] == "Enrique") {
+                     $view_phit = $conexion->query("SELECT photo, name FROM team_member WHERE id_team_member = 1")->fetchAll(PDO::FETCH_OBJ);
+
+                     foreach($view_phit as $phit) {
+                        echo '<img class="profile" src="/ejpservice/img/team_member/' . $phit->photo . '">';
+                        echo "<h3>" . $phit->name . "</h3>";
+                     }
+
+                  } else if($_SESSION['usuario'] == "Tomas") {
+                     $view_phit = $conexion->query("SELECT photo, name FROM team_member WHERE id_team_member = 2")->fetchAll(PDO::FETCH_OBJ);
+
+                     foreach($view_phit as $phit) {
+                        echo '<img class="profile" src="/ejpservice/img/team_member/' . $phit->photo . '">';
+                        echo "<h3>" . $phit->name . "</h3>";
+                     }
+                  }
+               ?>
             </div>
          </div>
 

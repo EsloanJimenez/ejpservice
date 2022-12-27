@@ -15,6 +15,11 @@
 <body>
    <div id="container">
       <?php
+         session_start();
+         if (!isset($_SESSION['usuario'])) {
+            header ("location:login.php");
+         }
+
          include 'conexion.php';
 
          include 'headerControlador.php';
@@ -46,8 +51,25 @@
             <h1>Panel</h1>
 
             <div class="user">
-               <img src="../img/icon/login.png" alt="">
-               <h3>Nombre Usuario</h3>
+               <?php
+                  //echo "<h3>" . $_SESSION['usuario'] . "</h3>";
+                  if($_SESSION['usuario'] == "Enrique") {
+                     $view_phit = $conexion->query("SELECT photo, name FROM team_member WHERE id_team_member = 1")->fetchAll(PDO::FETCH_OBJ);
+
+                     foreach($view_phit as $phit) {
+                        echo '<img class="profile" src="/ejpservice/img/team_member/' . $phit->photo . '">';
+                        echo "<h3>" . $phit->name . "</h3>";
+                     }
+
+                  } else if($_SESSION['usuario'] == "Tomas") {
+                     $view_phit = $conexion->query("SELECT photo, name FROM team_member WHERE id_team_member = 2")->fetchAll(PDO::FETCH_OBJ);
+
+                     foreach($view_phit as $phit) {
+                        echo '<img class="profile" src="/ejpservice/img/team_member/' . $phit->photo . '">';
+                        echo "<h3>" . $phit->name . "</h3>";
+                     }
+                  }
+               ?>
             </div>
          </div>
 
