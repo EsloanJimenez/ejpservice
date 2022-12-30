@@ -37,7 +37,7 @@
       include 'conexion.php';
 
       // ------------- PAGINACION ----------------------
-      $size_pagina = 10;
+      $size_pagina = 30;
       $total = 0;
 
       if (isset($_GET["pagina"])) {
@@ -116,7 +116,7 @@
                         <td><input type="number" id="amount" name="amount" placeholder="Cantidad"></td>
                      </tr>
                      <tr>
-                        <td><input type="number" id="price" name="price" placeholder="Precio"></td>
+                        <td><input type="floatval" id="price" name="price" placeholder="Precio"></td>
                      </tr>
                         <td colspan="2" style="text-align: center" class="btn_registrar"><input type="submit" name="insertar" value="Registrar"></td>
                      </tr>

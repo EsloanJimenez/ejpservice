@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: localhost:3306
--- Tiempo de generación: 22-12-2022 a las 23:16:05
+-- Tiempo de generación: 30-12-2022 a las 17:24:56
 -- Versión del servidor: 8.0.31
 -- Versión de PHP: 8.1.10
 
@@ -54,7 +54,7 @@ CREATE TABLE `bill` (
   `description` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   `date` datetime DEFAULT NULL,
   `amount` int NOT NULL,
-  `price` int NOT NULL
+  `price` float NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
@@ -70,7 +70,15 @@ INSERT INTO `bill` (`id_bill`, `user_admin`, `description`, `date`, `amount`, `p
 (7, 1, 'Recarga al chip', '2022-12-03 09:51:00', 1, 100),
 (8, 1, 'Porta Papeles', '2022-12-05 10:00:00', 2, 500),
 (9, 1, 'Cartucho de impresora', '2022-12-08 11:15:00', 2, 950),
-(10, 1, 'Abrir Carro En Santiago', '2022-12-09 15:00:00', 1, 1500);
+(10, 1, 'Abrir Carro En Santiago', '2022-12-09 15:00:00', 1, 1500),
+(11, 1, 'ACTIVO IMPONIBLE 2020 # Referencia 22954907022-3', '2022-12-28 10:08:00', 1, 1114.73),
+(12, 1, 'ANTICIPO OCTUBRE # Referencia 22954907009-6', '2022-12-28 09:47:00', 1, 676.34),
+(13, 1, 'ANTICIPO SEPTIEMBRE # Referencia 22954906996-9', '2022-12-28 09:50:00', 1, 702.73),
+(14, 1, 'IR-17 DICIEMBRE 2021 # Referencia 22954906964-0', '2022-12-28 10:10:00', 1, 2917.4),
+(15, 1, 'ITBIS NOVIEMBRE #REFERENCIA  22954906917-9', '2022-12-28 09:43:00', 1, 2399.99),
+(16, 1, 'ACTIVO IMPONIBLE 2020 2DO RECIBO #REFERENCIA 22954907039-8', '2022-12-28 10:10:00', 1, 961.77),
+(17, 1, 'IR-2 2021 #REFERENCIA 22954906952-7', '2022-12-28 10:20:00', 1, 9191.28),
+(18, 1, 'RESIDUO SOLIDO #REFERENCIA 22954906982-9', '2022-12-28 10:27:00', 1, 809);
 
 -- --------------------------------------------------------
 
@@ -275,7 +283,27 @@ INSERT INTO `payment_waiter` (`id_payment_waiter`, `name`, `date`, `event`, `pay
 (155, 'Rosa Marte', '2022-12-16 08:00:00', 52, 2000, 'Pagado'),
 (156, 'Ocaury Tejada', '2022-12-16 08:00:00', 52, 2000, 'Pagado'),
 (157, 'Elizabeth Reyes', '2022-12-16 08:00:00', 52, 200, 'Pagado'),
-(158, 'Jehovannia Mejia', '2022-12-16 08:00:00', 52, 2000, 'Pagado');
+(158, 'Jehovannia Mejia', '2022-12-16 08:00:00', 52, 2000, 'Pagado'),
+(159, 'Esloan Jimenez', '2022-12-31 18:00:00', 53, 10000, 'Por Pagar'),
+(160, 'Tomas Encarnacion', '2022-12-31 18:00:00', 53, 7000, 'Por Pagar'),
+(161, 'Yhennifer Abreu', '2022-12-31 18:00:00', 53, 5000, 'Por Pagar'),
+(162, 'Leiky Piña', '2022-12-31 18:00:00', 53, 5000, 'Por Pagar'),
+(163, 'Juan Aristides', '2022-12-31 18:00:00', 53, 5500, 'Por Pagar'),
+(164, 'Luisa Mateo', '2022-12-31 18:00:00', 53, 5000, 'Por Pagar'),
+(165, 'Smerlyn Morillo', '2022-12-31 18:00:00', 53, 5000, 'Por Pagar'),
+(166, 'Janler Escolastico', '2022-12-31 18:00:00', 53, 5000, 'Por Pagar'),
+(167, 'Wister Alexander', '2022-12-31 18:00:00', 53, 5000, 'Por Pagar'),
+(168, 'Marcos Frias', '2022-12-31 18:00:00', 53, 5000, 'Por Pagar'),
+(169, 'Kennedi Rivera', '2022-12-31 18:00:00', 53, 5500, 'Por Pagar'),
+(170, 'Antony Ramires', '2022-12-31 18:00:00', 53, 5000, 'Por Pagar'),
+(171, 'Transporte', '2022-12-31 13:00:00', 53, 4600, 'Por Pagar'),
+(172, 'Transporte', '2022-12-31 18:00:00', 53, 4400, 'Por Pagar'),
+(173, 'Esloan Jimenez', '2023-01-02 18:00:00', 54, 5500, 'Por Pagar'),
+(174, 'Tomas Encarnacion', '2023-01-02 18:00:00', 54, 5500, 'Por Pagar'),
+(175, 'Yhennifer Abreu', '2023-01-02 18:00:00', 54, 4500, 'Por Pagar'),
+(176, 'Juan Aristides', '2023-01-02 18:00:00', 54, 4500, 'Por Pagar'),
+(177, 'Luisa Mateo', '2023-01-02 18:00:00', 54, 4500, 'Por Pagar'),
+(178, 'Transporte', '2023-01-02 18:00:00', 54, 3000, 'Por Pagar');
 
 -- --------------------------------------------------------
 
@@ -362,13 +390,13 @@ INSERT INTO `purchased_events` (`id_purchased_events`, `team_member`, `date`, `t
 
 CREATE TABLE `sales` (
   `id_sales` int NOT NULL,
-  `description` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
+  `description` varchar(200) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL,
   `customer` int NOT NULL,
   `date` date DEFAULT NULL,
   `time` time NOT NULL,
   `amount` int NOT NULL,
   `price` int NOT NULL,
-  `comment` varchar(100) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL
+  `comment` varchar(200) CHARACTER SET latin1 COLLATE latin1_spanish_ci NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1 COLLATE=latin1_spanish_ci;
 
 --
@@ -423,7 +451,9 @@ INSERT INTO `sales` (`id_sales`, `description`, `customer`, `date`, `time`, `amo
 (49, 'Almuerzo George', 2, '2022-12-16', '10:00:00', 6, 1500, ''),
 (50, 'Club Banco Central', 9, '2022-12-17', '09:00:00', 7, 2000, ''),
 (51, 'Autodromo', 2, '2022-12-18', '10:00:00', 5, 1500, ''),
-(52, 'San Susi', 10, '2022-12-16', '08:00:00', 14, 2300, 'Nos solicitaron 15 pero 1 no llego');
+(52, 'San Susi', 10, '2022-12-16', '08:00:00', 14, 2300, 'Nos solicitaron 15 pero 1 no llego'),
+(53, 'Fiesta Fin De Año - Punta Cana - Playa Palmera  ', 6, '2022-12-31', '18:00:00', 10, 10000, '1  Capitán General 10,000\r\n9  Camareros       45,000\r\n2  Bar tender      11,000\r\n10 Hospedaje        2,000\r\n2  Transporte      10,200'),
+(54, 'Cumple Año De Andi - Punta Cana - Playa Palmera', 6, '2023-01-02', '18:00:00', 5, 5800, '4 Camareros\r\n1 Transporte');
 
 -- --------------------------------------------------------
 
@@ -505,10 +535,10 @@ INSERT INTO `team_member` (`id_team_member`, `photo`, `name`, `identification_ca
 (54, 0x416e66656e6954656a6164612e706e67, 'Anfeni Tejada Placencio', '402-3457254-9', 'Masculino', '8292040300', 'Arroye', 'No Tiene', 'No Tiene', '', 'Activo'),
 (55, 0x427279616e2074696d6f6e69656c2072616d697265732e6a706567, 'Brayan Ramirez', '402-1868514-3', 'Masculino', '8494721403', 'Grupo C', 'No Tiene', 'No Tiene', '', 'Activo'),
 (56, 0x4672616e73697320436f6e74726572612e6a706567, 'Fransis Contrera ', '225-0068860-5', 'Masculino', '8293546782 ', 'Grupo A', 'No Tiene', 'No Tiene', ' ', 'Inactivo'),
-(57, 0x4372697374696e612052697661732e6a706567, 'Cristina Rivas ', '', 'Femenina', '8494324560 ', 'Arroye', 'Banreservas', 'Ahorro', '230440877', 'Activo'),
+(57, 0x4372697374696e612052697661732e6a706567, 'Cristina Rivas  ', ' ', 'Femenina', '8494324560 ', 'Arroye', 'Banreservas', 'Ahorro', '230440877 ', 'Inactivo'),
 (58, 0x4c75697361204d6174656f2e6a706567, 'Luisa Mateo ', '107-0001424-3', 'Femenina', '8097060404 ', 'Grupo D', 'Popular', 'Corriente', '820212025', 'Activo'),
 (59, 0x4e69636f6c204375657661732e6a706567, 'Nicol Cuevas ', '402-0979408-6', 'Femenina', '8298652087 ', 'Arroye', 'Banreservas', 'Ahorro', '9603389217 ', 'Inactivo'),
-(60, 0x53637265656e73686f7420323032322d31312d3131203132303132382e706e67, 'Onel Santana', '027-0043965-2', 'Masculino', '8298152347', 'Grupo B', 'No Tiene', 'No Tiene', '', 'Activo'),
+(60, 0x53637265656e73686f7420323032322d31312d3131203132303132382e706e67, 'Onel Santana ', '027-0043965-2', 'Masculino', '8298152347 ', 'Grupo B', 'No Tiene', 'No Tiene', ' ', 'Inactivo'),
 (61, 0x6361726f6c696e654f7a756e612e706e67, 'Caroline Ozuna ', '402-1275515-7', 'Femenina', '8293038212 ', 'Grupo C', 'Popular', 'Ahorro', '830559589', 'Activo'),
 (62, 0x53637265656e73686f7420323032322d31312d3131203131353132312e706e67, 'Roder Ortega ', '000-0000000-0', 'Masculino', '8296414378 ', 'Grupo B', 'No Tiene', 'No Tiene', '', 'Activo'),
 (64, 0x526f7361416e67656c69732e6a706567, 'Rosa Marte ', '402-3156096-8', 'Femenina', '8495692826 ', 'Grupo C', 'Banreservas', 'Ahorro', '9604492502', 'Activo'),
@@ -545,7 +575,7 @@ INSERT INTO `team_member` (`id_team_member`, `photo`, `name`, `identification_ca
 (96, 0x4e69636f6c204665727265722e6a7067, 'Nicol Ferrer', '402-1992528-2', 'Femenina', '8092289512', 'Grupo B', 'No Tiene', 'No Tiene', '', 'Activo'),
 (97, 0x4c756973204c6562726f6e2e6a7067, 'Luis Lebron', '012-0121665-0', 'Masculino', '8295662800', 'Grupo B', 'No Tiene', 'No Tiene', '', 'Activo'),
 (98, 0x596575726920416c6d6f6e74652e6a706567, 'Yeuri Almonte ', '223-0151250-9', 'Masculino', '8298771454 ', 'Grupo B', 'No Tiene', 'No Tiene', '', 'Activo'),
-(99, 0x4a6f68656c205069652e706e67, 'Johel Pie', '402-4212031-5', 'Masculino', '8096477491', 'Grupo C', 'No Tiene', 'No Tiene', '', 'Activo'),
+(99, 0x4a6f68656c205069652e706e67, 'Johel Pie  ', '402-4212031-5', 'Masculino', '8299276426', 'Grupo C', 'Popular', 'Ahorro', ' 825378805  ', 'Activo'),
 (100, 0x4f63617572792054656a6164612e6a7067, 'Ocaury Tejada', '402-2155449-2', 'Masculino', '8299217840', 'Grupo B', 'No Tiene', 'No Tiene', '', 'Activo'),
 (101, 0x4c7569732047757a6d616e2e706e67, 'Luis Guzman', '40222856797', 'Masculino', '8298146731', 'Grupo C', 'Banreservas', 'Ahorro', '9605021060', 'Activo'),
 (102, 0x546f6d6173204d6f72656e6f2e706e67, 'Tomas Moreno', '402-1554987-0', 'Masculino', '8298842915', 'Grupo C', 'Popular', 'Ahorro', '823737473', 'Activo'),
@@ -562,7 +592,9 @@ INSERT INTO `team_member` (`id_team_member`, `photo`, `name`, `identification_ca
 (114, 0x4a686f6e617474616c7973204d6564696e612e6a706567, 'Jhonattalys Medina', '225-0041076-0', 'Femenina', '8498577455', 'Grupo C', 'No Tiene', 'No Tiene', '', 'Activo'),
 (115, 0x44617277696e20526f6472c3ad6775657a2e6a706567, 'Darwin Rodríguez', '001-1854065-7', 'Masculino', '8093972825', 'Grupo C', 'No Tiene', 'No Tiene', '', 'Activo'),
 (116, 0x596f6e617468616e204465204a657375732e6a706567, 'Yonathan De Jesus', '402-4479759-9', 'Masculino', '8096637003', 'Grupo C', 'No Tiene', 'No Tiene', '', 'Activo'),
-(117, 0x4d6172696e656c204761726369612e6a706567, 'Marinel Garcia', '402-2912588-1', 'Femenina', '8097174120', 'Grupo C', 'No Tiene', 'No Tiene', '', 'Activo');
+(117, 0x4d6172696e656c204761726369612e6a706567, 'Marinel Garcia', '402-2912588-1', 'Femenina', '8097174120', 'Grupo C', 'No Tiene', 'No Tiene', '', 'Activo'),
+(118, 0x59616d69726c6120506174726963696f2e706e67, 'Yamirla Patricio', '010-0089619-9', 'Femenina', '8098606389', 'Grupo C', 'No Tiene', 'No Tiene', '', 'Activo'),
+(119, 0x4a616e6c6572204573636f6c61737469636f2e6a706567, 'Janler Escolastico', '402-2725406-3', 'Masculino', '8494063065', 'Grupo D', 'No Tiene', 'No Tiene', '', 'Activo');
 
 --
 -- Índices para tablas volcadas
@@ -628,7 +660,7 @@ ALTER TABLE `admin`
 -- AUTO_INCREMENT de la tabla `bill`
 --
 ALTER TABLE `bill`
-  MODIFY `id_bill` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `id_bill` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT de la tabla `customers`
@@ -640,7 +672,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT de la tabla `payment_waiter`
 --
 ALTER TABLE `payment_waiter`
-  MODIFY `id_payment_waiter` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=159;
+  MODIFY `id_payment_waiter` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=179;
 
 --
 -- AUTO_INCREMENT de la tabla `purchased_events`
@@ -652,13 +684,13 @@ ALTER TABLE `purchased_events`
 -- AUTO_INCREMENT de la tabla `sales`
 --
 ALTER TABLE `sales`
-  MODIFY `id_sales` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=53;
+  MODIFY `id_sales` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=55;
 
 --
 -- AUTO_INCREMENT de la tabla `team_member`
 --
 ALTER TABLE `team_member`
-  MODIFY `id_team_member` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=118;
+  MODIFY `id_team_member` int NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=120;
 
 --
 -- Restricciones para tablas volcadas

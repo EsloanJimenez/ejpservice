@@ -108,7 +108,7 @@
                <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="post" enctype="multipart/form-data">
                   <table>
                      <tr>
-                        <td><input type="text" id="description" name="description" placeholder="Descripcion Del Evento"></td>
+                        <td><input type="text" id="description" name="description" placeholder="Descripcion Del Evento" maxlength="150"></td>
                      </tr>
                      <tr>
                         <td>
@@ -140,7 +140,7 @@
                         <td><input type="number" id="price" name="price" placeholder="Precio"></td>
                      </tr>
                      <tr>
-                        <td> <textarea id="comment" name="comment" rows="4" cols="30" placeholder="Comentario" maxlength="100"></textarea> </td>
+                        <td> <textarea id="comment" name="comment" rows="5" cols="30" placeholder="Comentario" maxlength="200"></textarea> </td>
                      </tr>
                      <tr>
                         <td colspan="2" style="text-align: center" class="btn_registrar"><input type="submit" name="insertar_venta" value="Registrar"></td>

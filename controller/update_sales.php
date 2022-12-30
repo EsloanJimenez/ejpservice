@@ -114,7 +114,7 @@
                         <td><label for="tim"></label><input type="text" name="tim" id="tim" value="<?php echo $tim ?>"></td>
                         <td><label for="amo"></label><input type="text" name="amo" id="amo" value="<?php echo $amo ?>"></td>
                         <td><label for="pri"></label><input type="text" name="pri" id="pri" value="<?php echo $pri ?>"></td>
-                        <td><label for="com"></label><input type="text" name="com" id="com" value="<?php echo $com ?>"></td>
+                        <td><label for="com"><textarea name="com" id="com" cols="30" rows="5" placeholder="<?php echo $com ?>"></textarea></td>
                         <td colspan="2"><input type="submit" name="actualizar" class="btn_update" value="Actualizar"></td>
                      </tr>
                   </tbody>
